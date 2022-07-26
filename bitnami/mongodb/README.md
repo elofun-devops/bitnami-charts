@@ -7,7 +7,7 @@ MongoDB(R) is a relational open source NoSQL database. Easy to use, it stores da
 [Overview of MongoDB&reg;](http://www.mongodb.org)
 
 Disclaimer: The respective trademarks mentioned in the offering are owned by the respective companies. We do not provide a commercial license for any of these products. This listing has an open-source license. MongoDB(R) is run and maintained by MongoDB, which is a completely separate project from Bitnami.
-                           
+
 ## TL;DR
 
 ```bash
@@ -17,7 +17,7 @@ $ helm install my-release bitnami/mongodb
 
 ## Introduction
 
-This chart bootstraps a [MongoDB(&reg;)](https://github.com/bitnami/bitnami-docker-mongodb) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [MongoDB(&reg;)](https://github.com/bitnami/containers/tree/main/bitnami/mongodb) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
@@ -95,7 +95,7 @@ Refer to the [chart documentation for more information on each of these architec
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
 | `image.registry`         | MongoDB(&reg;) image registry                                                                                                                                | `docker.io`            |
 | `image.repository`       | MongoDB(&reg;) image registry                                                                                                                                | `bitnami/mongodb`      |
-| `image.tag`              | MongoDB(&reg;) image tag (immutable tags are recommended)                                                                                                    | `5.0.9-debian-11-r3`   |
+| `image.tag`              | MongoDB(&reg;) image tag (immutable tags are recommended)                                                                                                    | `5.0.9-debian-11-r7`   |
 | `image.pullPolicy`       | MongoDB(&reg;) image pull policy                                                                                                                             | `IfNotPresent`         |
 | `image.pullSecrets`      | Specify docker-registry secret names as an array                                                                                                             | `[]`                   |
 | `image.debug`            | Set to true if you would like to see extra information on logs                                                                                               | `false`                |
@@ -120,7 +120,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `tls.caKey`              | CA certificate private key (base64 encoded)                                                                                                                  | `""`                   |
 | `tls.image.registry`     | Init container TLS certs setup image registry                                                                                                                | `docker.io`            |
 | `tls.image.repository`   | Init container TLS certs setup image repository                                                                                                              | `bitnami/nginx`        |
-| `tls.image.tag`          | Init container TLS certs setup image tag (immutable tags are recommended)                                                                                    | `1.21.6-debian-11-r13` |
+| `tls.image.tag`          | Init container TLS certs setup image tag (immutable tags are recommended)                                                                                    | `1.21.6-debian-11-r17` |
 | `tls.image.pullPolicy`   | Init container TLS certs setup image pull policy                                                                                                             | `IfNotPresent`         |
 | `tls.image.pullSecrets`  | Init container TLS certs specify docker-registry secret names as an array                                                                                    | `[]`                   |
 | `tls.extraDnsNames`      | Add extra dns names to the CA, can solve x509 auth issue for pod clients                                                                                     | `[]`                   |
@@ -241,7 +241,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `externalAccess.autoDiscovery.enabled`                   | Enable using an init container to auto-detect external IPs by querying the K8s API                                                              | `false`               |
 | `externalAccess.autoDiscovery.image.registry`            | Init container auto-discovery image registry                                                                                                    | `docker.io`           |
 | `externalAccess.autoDiscovery.image.repository`          | Init container auto-discovery image repository                                                                                                  | `bitnami/kubectl`     |
-| `externalAccess.autoDiscovery.image.tag`                 | Init container auto-discovery image tag (immutable tags are recommended)                                                                        | `1.24.2-debian-11-r5` |
+| `externalAccess.autoDiscovery.image.tag`                 | Init container auto-discovery image tag (immutable tags are recommended)                                                                        | `1.24.3-debian-11-r2` |
 | `externalAccess.autoDiscovery.image.pullPolicy`          | Init container auto-discovery image pull policy                                                                                                 | `IfNotPresent`        |
 | `externalAccess.autoDiscovery.image.pullSecrets`         | Init container auto-discovery image pull secrets                                                                                                | `[]`                  |
 | `externalAccess.autoDiscovery.resources.limits`          | Init container auto-discovery resource limits                                                                                                   | `{}`                  |
@@ -315,7 +315,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `volumePermissions.enabled`                   | Enable init container that changes the owner and group of the persistent volume(s) mountpoint to `runAsUser:fsGroup` | `false`                 |
 | `volumePermissions.image.registry`            | Init container volume-permissions image registry                                                                     | `docker.io`             |
 | `volumePermissions.image.repository`          | Init container volume-permissions image repository                                                                   | `bitnami/bitnami-shell` |
-| `volumePermissions.image.tag`                 | Init container volume-permissions image tag (immutable tags are recommended)                                         | `11-debian-11-r13`      |
+| `volumePermissions.image.tag`                 | Init container volume-permissions image tag (immutable tags are recommended)                                         | `11-debian-11-r16`      |
 | `volumePermissions.image.pullPolicy`          | Init container volume-permissions image pull policy                                                                  | `IfNotPresent`          |
 | `volumePermissions.image.pullSecrets`         | Specify docker-registry secret names as an array                                                                     | `[]`                    |
 | `volumePermissions.resources.limits`          | Init container volume-permissions resource limits                                                                    | `{}`                    |
@@ -496,7 +496,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `metrics.enabled`                            | Enable using a sidecar Prometheus exporter                                                                            | `false`                    |
 | `metrics.image.registry`                     | MongoDB(&reg;) Prometheus exporter image registry                                                                     | `docker.io`                |
 | `metrics.image.repository`                   | MongoDB(&reg;) Prometheus exporter image repository                                                                   | `bitnami/mongodb-exporter` |
-| `metrics.image.tag`                          | MongoDB(&reg;) Prometheus exporter image tag (immutable tags are recommended)                                         | `0.33.0-debian-11-r0`      |
+| `metrics.image.tag`                          | MongoDB(&reg;) Prometheus exporter image tag (immutable tags are recommended)                                         | `0.33.0-debian-11-r3`      |
 | `metrics.image.pullPolicy`                   | MongoDB(&reg;) Prometheus exporter image pull policy                                                                  | `IfNotPresent`             |
 | `metrics.image.pullSecrets`                  | Specify docker-registry secret names as an array                                                                      | `[]`                       |
 | `metrics.username`                           | String with username for the metrics exporter                                                                         | `""`                       |
@@ -578,7 +578,7 @@ Bitnami will release a new chart updating its containers if a new version of the
 
 ### Customize a new MongoDB instance
 
-The [Bitnami MongoDB(&reg;) image](https://github.com/bitnami/bitnami-docker-mongodb) supports the use of custom scripts to initialize a fresh instance. In order to execute the scripts, two options are available:
+The [Bitnami MongoDB(&reg;) image](https://github.com/bitnami/containers/tree/main/bitnami/mongodb) supports the use of custom scripts to initialize a fresh instance. In order to execute the scripts, two options are available:
 
 * Specify them using the `initdbScripts` parameter as dict.
 * Define an external Kubernetes ConfigMap with all the initialization scripts by setting the `initdbScriptsConfigMap` parameter. Note that this will override the previous option.
@@ -614,7 +614,7 @@ Refer to the chart documentation for more information on, and examples of, confi
 
 ## Persistence
 
-The [Bitnami MongoDB(&reg;)](https://github.com/bitnami/bitnami-docker-mongodb) image stores the MongoDB(&reg;) data and configurations at the `/bitnami/mongodb` path of the container.
+The [Bitnami MongoDB(&reg;)](https://github.com/bitnami/containers/tree/main/bitnami/mongodb) image stores the MongoDB(&reg;) data and configurations at the `/bitnami/mongodb` path of the container.
 
 The chart mounts a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) at this location. The volume is created using dynamic volume provisioning.
 
@@ -720,7 +720,7 @@ ingress:
 ### To 6.0.0
 
 From this version, `mongodbEnableIPv6` is set to `false` by default in order to work properly in most k8s clusters, if you want to use IPv6 support, you need to set this variable to `true` by adding `--set mongodbEnableIPv6=true` to your `helm` command.
-You can find more information in the [`bitnami/mongodb` image README](https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md).
+You can find more information in the [`bitnami/mongodb` image README](https://github.com/bitnami/containers/tree/main/bitnami/mongodb#readme).
 
 ### To 5.0.0
 

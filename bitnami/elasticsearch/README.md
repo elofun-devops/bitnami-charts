@@ -7,7 +7,7 @@ Elasticsearch is a distributed search and analytics engine. It is used for web s
 [Overview of Elasticsearch](https://www.elastic.co/products/elasticsearch)
 
 Trademarks: This software listing is packaged by Bitnami. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
-                           
+
 ## TL;DR
 
 ```console
@@ -17,7 +17,7 @@ $ helm install my-release bitnami/elasticsearch
 
 ## Introduction
 
-This chart bootstraps a [Elasticsearch](https://github.com/bitnami/bitnami-docker-elasticsearch) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Elasticsearch](https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
@@ -176,6 +176,7 @@ $ helm delete --purge my-release
 | `master.replicaCount`                                | Number of master-elegible replicas to deploy                                                                                                       | `2`                 |
 | `master.nameOverride`                                | String to partially override elasticsearch.master.fullname                                                                                         | `""`                |
 | `master.fullnameOverride`                            | String to fully override elasticsearch.master.fullname                                                                                             | `""`                |
+| `master.annotations`                                 | Annotations for the master statefulset                                                                                                             | `{}`                |
 | `master.updateStrategy.type`                         | Master-elegible nodes statefulset stategy type                                                                                                     | `RollingUpdate`     |
 | `master.resources.limits`                            | The resources limits for the master-elegible containers                                                                                            | `{}`                |
 | `master.resources.requests`                          | The requested resources for the master-elegible containers                                                                                         | `{}`                |
@@ -258,6 +259,7 @@ $ helm delete --purge my-release
 | `data.replicaCount`                                | Number of data-only replicas to deploy                                                                                                           | `2`                 |
 | `data.nameOverride`                                | String to partially override elasticsearch.data.fullname                                                                                         | `""`                |
 | `data.fullnameOverride`                            | String to fully override elasticsearch.data.fullname                                                                                             | `""`                |
+| `data.annotations`                                 | Annotations for the data statefulset                                                                                                             | `{}`                |
 | `data.updateStrategy.type`                         | Data-only nodes statefulset stategy type                                                                                                         | `RollingUpdate`     |
 | `data.resources.limits`                            | The resources limits for the data containers                                                                                                     | `{}`                |
 | `data.resources.requests`                          | The requested resources for the data containers                                                                                                  | `{}`                |
@@ -340,6 +342,7 @@ $ helm delete --purge my-release
 | `coordinating.replicaCount`                                | Number of coordinating-only replicas to deploy                                                                            | `2`             |
 | `coordinating.nameOverride`                                | String to partially override elasticsearch.coordinating.fullname                                                          | `""`            |
 | `coordinating.fullnameOverride`                            | String to fully override elasticsearch.coordinating.fullname                                                              | `""`            |
+| `coordinating.annotations`                                 | Annotations for the coordinating-only statefulset                                                                         | `{}`            |
 | `coordinating.updateStrategy.type`                         | Coordinating-only nodes statefulset stategy type                                                                          | `RollingUpdate` |
 | `coordinating.resources.limits`                            | The resources limits for the coordinating-only containers                                                                 | `{}`            |
 | `coordinating.resources.requests`                          | The requested resources for the coordinating-only containers                                                              | `{}`            |
@@ -414,6 +417,7 @@ $ helm delete --purge my-release
 | `ingest.replicaCount`                                | Number of ingest-only replicas to deploy                                                                                         | `2`                          |
 | `ingest.nameOverride`                                | String to partially override elasticsearch.ingest.fullname                                                                       | `""`                         |
 | `ingest.fullnameOverride`                            | String to fully override elasticsearch.ingest.fullname                                                                           | `""`                         |
+| `ingest.annotations`                                 | Annotations for the ingest statefulset                                                                                           | `{}`                         |
 | `ingest.containerPorts.restAPI`                      | Elasticsearch REST API port                                                                                                      | `9200`                       |
 | `ingest.containerPorts.transport`                    | Elasticsearch Transport port                                                                                                     | `9300`                       |
 | `ingest.updateStrategy.type`                         | Ingest-only nodes statefulset stategy type                                                                                       | `RollingUpdate`              |
@@ -789,7 +793,7 @@ As an alternative, you can use of the preset configurations for pod affinity, po
 
 ## Persistence
 
-The [Bitnami Elasticsearch](https://github.com/bitnami/bitnami-docker-elasticsearch) image stores the Elasticsearch data at the `/bitnami/elasticsearch/data` path of the container.
+The [Bitnami Elasticsearch](https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch) image stores the Elasticsearch data at the `/bitnami/elasticsearch/data` path of the container.
 
 By default, the chart mounts a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) at this location. The volume is created using dynamic volume provisioning. See the [Parameters](#parameters) section to configure the PVC.
 

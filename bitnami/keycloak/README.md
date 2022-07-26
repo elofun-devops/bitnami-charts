@@ -7,7 +7,7 @@ Keycloak is a high performance Java-based identity and access management solutio
 [Overview of Keycloak](https://www.keycloak.org/)
 
 Trademarks: This software listing is packaged by Bitnami. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
-                           
+
 ## TL;DR
 
 ```console
@@ -19,7 +19,7 @@ Trademarks: This software listing is packaged by Bitnami. The respective tradema
 
 Bitnami charts for Helm are carefully engineered, actively maintained and are the quickest and easiest way to deploy containers on a Kubernetes cluster that are ready to handle production workloads.
 
-This chart bootstraps a [Keycloak](https://github.com/bitnami/bitnami-docker-keycloak) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Keycloak](https://github.com/bitnami/containers/tree/main/bitnami/keycloak) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
@@ -69,6 +69,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `kubeVersion`            | Force target Kubernetes version (using Helm capabilities if not set)                    | `""`            |
 | `nameOverride`           | String to partially override keycloak.fullname                                          | `""`            |
 | `fullnameOverride`       | String to fully override keycloak.fullname                                              | `""`            |
+| `namespaceOverride`      | String to fully override common.names.namespace                                         | `""`            |
 | `commonLabels`           | Labels to add to all deployed objects                                                   | `{}`            |
 | `commonAnnotations`      | Annotations to add to all deployed objects                                              | `{}`            |
 | `clusterDomain`          | Default Kubernetes cluster domain                                                       | `cluster.local` |
@@ -84,7 +85,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------- |
 | `image.registry`                 | Keycloak image registry                                                                                                      | `docker.io`           |
 | `image.repository`               | Keycloak image repository                                                                                                    | `bitnami/keycloak`    |
-| `image.tag`                      | Keycloak image tag (immutable tags are recommended)                                                                          | `18.0.2-debian-11-r3` |
+| `image.tag`                      | Keycloak image tag (immutable tags are recommended)                                                                          | `18.0.2-debian-11-r9` |
 | `image.pullPolicy`               | Keycloak image pull policy                                                                                                   | `IfNotPresent`        |
 | `image.pullSecrets`              | Specify docker-registry secret names as an array                                                                             | `[]`                  |
 | `image.debug`                    | Specify if debug logs should be enabled                                                                                      | `false`               |
@@ -244,21 +245,22 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ### Metrics parameters
 
-| Name                                       | Description                                                                           | Value   |
-| ------------------------------------------ | ------------------------------------------------------------------------------------- | ------- |
-| `metrics.enabled`                          | Enable exposing Keycloak statistics                                                   | `false` |
-| `metrics.service.ports.http`               | Metrics service HTTP port                                                             | `9990`  |
-| `metrics.service.annotations`              | Annotations for enabling prometheus to access the metrics endpoints                   | `{}`    |
-| `metrics.serviceMonitor.enabled`           | Create ServiceMonitor Resource for scraping metrics using PrometheusOperator          | `false` |
-| `metrics.serviceMonitor.namespace`         | Namespace which Prometheus is running in                                              | `""`    |
-| `metrics.serviceMonitor.interval`          | Interval at which metrics should be scraped                                           | `30s`   |
-| `metrics.serviceMonitor.scrapeTimeout`     | Specify the timeout after which the scrape is ended                                   | `""`    |
-| `metrics.serviceMonitor.labels`            | Additional labels that can be used so ServiceMonitor will be discovered by Prometheus | `{}`    |
-| `metrics.serviceMonitor.selector`          | Prometheus instance selector labels                                                   | `{}`    |
-| `metrics.serviceMonitor.relabelings`       | RelabelConfigs to apply to samples before scraping                                    | `[]`    |
-| `metrics.serviceMonitor.metricRelabelings` | MetricRelabelConfigs to apply to samples before ingestion                             | `[]`    |
-| `metrics.serviceMonitor.honorLabels`       | honorLabels chooses the metric's labels on collisions with target labels              | `false` |
-| `metrics.serviceMonitor.jobLabel`          | The name of the label on the target service to use as the job name in prometheus.     | `""`    |
+| Name                                       | Description                                                                           | Value      |
+| ------------------------------------------ | ------------------------------------------------------------------------------------- | ---------- |
+| `metrics.enabled`                          | Enable exposing Keycloak statistics                                                   | `false`    |
+| `metrics.service.ports.http`               | Metrics service HTTP port                                                             | `8080`     |
+| `metrics.service.annotations`              | Annotations for enabling prometheus to access the metrics endpoints                   | `{}`       |
+| `metrics.serviceMonitor.enabled`           | Create ServiceMonitor Resource for scraping metrics using PrometheusOperator          | `false`    |
+| `metrics.serviceMonitor.path`              | Metrics service HTTP path                                                             | `/metrics` |
+| `metrics.serviceMonitor.namespace`         | Namespace which Prometheus is running in                                              | `""`       |
+| `metrics.serviceMonitor.interval`          | Interval at which metrics should be scraped                                           | `30s`      |
+| `metrics.serviceMonitor.scrapeTimeout`     | Specify the timeout after which the scrape is ended                                   | `""`       |
+| `metrics.serviceMonitor.labels`            | Additional labels that can be used so ServiceMonitor will be discovered by Prometheus | `{}`       |
+| `metrics.serviceMonitor.selector`          | Prometheus instance selector labels                                                   | `{}`       |
+| `metrics.serviceMonitor.relabelings`       | RelabelConfigs to apply to samples before scraping                                    | `[]`       |
+| `metrics.serviceMonitor.metricRelabelings` | MetricRelabelConfigs to apply to samples before ingestion                             | `[]`       |
+| `metrics.serviceMonitor.honorLabels`       | honorLabels chooses the metric's labels on collisions with target labels              | `false`    |
+| `metrics.serviceMonitor.jobLabel`          | The name of the label on the target service to use as the job name in prometheus.     | `""`       |
 
 
 ### keycloak-config-cli parameters
@@ -268,7 +270,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `keycloakConfigCli.enabled`                               | Whether to enable keycloak-config-cli job                                                       | `false`                       |
 | `keycloakConfigCli.image.registry`                        | keycloak-config-cli container image registry                                                    | `docker.io`                   |
 | `keycloakConfigCli.image.repository`                      | keycloak-config-cli container image repository                                                  | `bitnami/keycloak-config-cli` |
-| `keycloakConfigCli.image.tag`                             | keycloak-config-cli container image tag                                                         | `5.2.1-debian-11-r3`          |
+| `keycloakConfigCli.image.tag`                             | keycloak-config-cli container image tag                                                         | `5.2.1-debian-11-r9`          |
 | `keycloakConfigCli.image.pullPolicy`                      | keycloak-config-cli container image pull policy                                                 | `IfNotPresent`                |
 | `keycloakConfigCli.image.pullSecrets`                     | keycloak-config-cli container image pull secrets                                                | `[]`                          |
 | `keycloakConfigCli.annotations`                           | Annotations for keycloak-config-cli job                                                         | `{}`                          |
@@ -357,9 +359,11 @@ Bitnami will release a new chart updating its containers if a new version of the
 
 ### Use an external database
 
-Sometimes, you may want to have Keycloak connect to an external database rather than a database within your cluster - for example, when using a managed database service, or when running a single database server for all your applications. To do this, set the `postgresql.enabled` parameter to `false` and specify the credentials for the external database using the `externalDatabase.*` parameters.
+Sometimes, you may want to have Keycloak connect to an external PostgreSQL database rather than a database within your cluster - for example, when using a managed database service, or when running a single database server for all your applications. To do this, set the `postgresql.enabled` parameter to `false` and specify the credentials for the external database using the `externalDatabase.*` parameters.
 
 Refer to the [chart documentation on using an external database](https://docs.bitnami.com/kubernetes/apps/keycloak/configuration/use-external-database) for more details and an example.
+
+> NOTE: Only PostgreSQL database server is supported as external database
 
 ### Add extra environment variables
 
@@ -381,7 +385,7 @@ Refer to the chart documentation for more information on, and examples of, confi
 
 ### Initialize a fresh instance
 
-The [Bitnami Keycloak](https://github.com/bitnami/bitnami-docker-keycloak) image allows you to use your custom scripts to initialize a fresh instance. In order to execute the scripts, you can specify custom scripts using the `initdbScripts` parameter as dict.
+The [Bitnami Keycloak](https://github.com/bitnami/containers/tree/main/bitnami/keycloak) image allows you to use your custom scripts to initialize a fresh instance. In order to execute the scripts, you can specify custom scripts using the `initdbScripts` parameter as dict.
 
 In addition to this option, you can also set an external ConfigMap with all the initialization scripts. This is done by setting the `initdbScriptsConfigMap` parameter. Note that this will override the previous option.
 
