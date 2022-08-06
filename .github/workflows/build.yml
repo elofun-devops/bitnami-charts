@@ -26,6 +26,7 @@ jobs:
       - name: Build
         run: |
           set -e
+          helm repo add bitnami https://charts.bitnami.com/bitnami
           cd bitnami/
           for item in $(ls); do
             if [ -d ${item} ] && [ -f ${item}/Chart.yaml ]; then
