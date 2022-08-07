@@ -27,6 +27,7 @@ jobs:
         run: |
           set -e
           helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add nobidev https://charts.nobidev.com
           cd bitnami/
           for item in $(ls); do
             if [ -d ${item} ] && [ -f ${item}/Chart.yaml ]; then
