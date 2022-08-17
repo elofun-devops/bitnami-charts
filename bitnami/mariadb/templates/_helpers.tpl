@@ -155,7 +155,8 @@ mariadb: architecture
 
 {{- define "mariadb.generateRootPassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
-{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd }}
 {{- else }}
 {{- required "A MariaDB Root Password is required!" .Values.auth.rootPassword | b64enc }}
 {{- end }}
@@ -168,7 +169,8 @@ mariadb: architecture
 
 {{- define "mariadb.generatePassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
-{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-password" "providedValues" (list "auth.password") "context" $) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-password" "providedValues" (list "auth.password") "context" $) }}
+{{- include "helm.values.unquote" $pwd }}
 {{- else }}
 {{- required "A MariaDB Database Password is required!" .Values.auth.password | b64enc }}
 {{- end }}
@@ -181,7 +183,8 @@ mariadb: architecture
 
 {{- define "mariadb.generateReplicationPassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
-{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd }}
 {{- else }}
 {{- required "A MariaDB Replication Password is required!" .Values.auth.replicationPassword | b64enc }}
 {{- end }}
