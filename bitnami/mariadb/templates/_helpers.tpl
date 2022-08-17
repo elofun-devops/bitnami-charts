@@ -147,3 +147,42 @@ mariadb: architecture
     "replication". Please set a valid architecture (--set architecture="xxxx")
 {{- end -}}
 {{- end -}}
+
+{{- define "mariadb.rootPassword" -}}
+{{- $pwd := include "mariadb.generateRootPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.rootPassword" "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generateRootPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
+{{- else }}
+{{- required "A MariaDB Root Password is required!" .Values.auth.rootPassword | b64enc | quote }}
+{{- end }}
+{{- end -}}
+
+{{- define "mariadb.password" -}}
+{{- $pwd := include "mariadb.generatePassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.password" "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generatePassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-password" "providedValues" (list "auth.password") "context" $) }}
+{{- else }}
+{{- required "A MariaDB Database Password is required!" .Values.auth.password | b64enc | quote }}
+{{- end }}
+{{- end -}}
+
+{{- define "mariadb.replicationPassword" -}}
+{{- $pwd := include "mariadb.generateReplicationPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.replicationPassword" "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generateReplicationPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
+{{- else }}
+{{- required "A MariaDB Replication Password is required!" .Values.auth.replicationPassword | b64enc | quote }}
+{{- end }}
+{{- end -}}
