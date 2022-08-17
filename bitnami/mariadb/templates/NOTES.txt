@@ -70,6 +70,6 @@ To upgrade this helm chart:
 {{- include "mariadb.validateValues" . }}
 {{- if not .Values.auth.customPasswordFiles -}}
   {{- $passwordValidationErrors := include "common.validations.values.mariadb.passwords" (dict "secret" (include "common.names.fullname" .) "context" $) -}}
-  {{- include "common.errors.upgrade.passwords.empty" (dict "validationErrors" (list $passwordValidationErrors) "context" $) -}}
+  {{- /* include "common.errors.upgrade.passwords.empty" (dict "validationErrors" (list $passwordValidationErrors) "context" $) */ -}}
 {{- end }}
 {{- end }}
