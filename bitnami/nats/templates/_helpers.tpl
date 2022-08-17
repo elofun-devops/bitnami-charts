@@ -31,6 +31,11 @@ We prepend a random letter to the string to avoid password validation errors
 
 {{/* Get current password or generate randomPassword */}}
 {{- define "nats.password" }}
+{{- $pwd := include "nats.generatePassword" . -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "nats.password" "value" $pwd) -}}
+{{- end }}
+
+{{- define "nats.generatePassword" }}
 {{- if .Values.auth.password }}
 {{- .Values.auth.password }}
 {{- else -}}
@@ -45,6 +50,11 @@ We prepend a random letter to the string to avoid password validation errors
 
 {{/* Get current cluster password or generate randomPassword */}}
 {{- define "nats.clusterPassword" }}
+{{- $pwd := include "nats.generateClusterPassword" . -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "nats.clusterPassword" "value" $pwd) -}}
+{{- end }}
+
+{{- define "nats.generateClusterPassword" }}
 {{- if .Values.cluster.auth.password }}
 {{- .Values.cluster.auth.password }}
 {{- else -}}
