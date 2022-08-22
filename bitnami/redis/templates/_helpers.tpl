@@ -199,6 +199,11 @@ otherwise it generates a random value.
 Return Redis&reg; password
 */}}
 {{- define "redis.password" -}}
+{{- $pwd := include "redis.generatePassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "redis.password" "value" $pwd) -}}
+{{- end -}}
+
+{{- define "redis.generatePassword" -}}
 {{- if not (empty .Values.global.redis.password) }}
     {{- .Values.global.redis.password -}}
 {{- else if not (empty .Values.auth.password) -}}
