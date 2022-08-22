@@ -156,9 +156,9 @@ mariadb: architecture
 {{- define "mariadb.generateRootPassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
-{{- include "helm.values.unquote" $pwd }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
 {{- else }}
-{{- required "A MariaDB Root Password is required!" .Values.auth.rootPassword | b64enc }}
+{{- required "A MariaDB Root Password is required!" .Values.auth.rootPassword }}
 {{- end }}
 {{- end -}}
 
@@ -170,9 +170,9 @@ mariadb: architecture
 {{- define "mariadb.generatePassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-password" "providedValues" (list "auth.password") "context" $) }}
-{{- include "helm.values.unquote" $pwd }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
 {{- else }}
-{{- required "A MariaDB Database Password is required!" .Values.auth.password | b64enc }}
+{{- required "A MariaDB Database Password is required!" .Values.auth.password }}
 {{- end }}
 {{- end -}}
 
@@ -184,8 +184,8 @@ mariadb: architecture
 {{- define "mariadb.generateReplicationPassword" -}}
 {{- if (not .Values.auth.forcePassword) }}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
-{{- include "helm.values.unquote" $pwd }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
 {{- else }}
-{{- required "A MariaDB Replication Password is required!" .Values.auth.replicationPassword | b64enc }}
+{{- required "A MariaDB Replication Password is required!" .Values.auth.replicationPassword }}
 {{- end }}
 {{- end -}}
