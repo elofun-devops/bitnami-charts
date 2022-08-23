@@ -202,3 +202,14 @@ etcd: disasterRecovery
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "etcd.secretName" .) "key" "etcd-root-password" "providedValues" (list "auth.rbac.rootPassword") "context" $) }}
 {{- include "helm.values.unquote" $pwd | b64dec }}
 {{- end -}}
+
+{{- define "etcd.token.jwtToken" -}}
+{{- if (include "etcd.token.createSecret" .) -}}
+{{- $jwtToken := lookup "v1" "Secret" .Release.Namespace (printf "%s-jwt-token" (include "common.names.fullname" .)) -}}
+{{- if $jwtToken -}}
+{{ index $jwtToken "data" "jwt-token.pem" | b64dec }}
+{{- else -}}
+{{ genPrivateKey "rsa" }}
+{{- end -}}
+{{- end -}}
+{{- end -}}

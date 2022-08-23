@@ -1,11 +1,13 @@
 annotations:
   category: Database
 apiVersion: v2
-appVersion: 14.4.0
+appVersion: 14.5.0
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
-    version: 1.x.x
+    tags:
+      - bitnami-common
+    version: 2.x.x
   - name: helm-utils
     repository: https://charts.nobidev.com
     version: 1.x.x
@@ -29,4 +31,4 @@ name: postgresql
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/postgresql
   - https://www.postgresql.org/
-version: 11.6.26
+version: 11.8.0

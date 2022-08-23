@@ -1,13 +1,13 @@
 annotations:
   category: Database
 apiVersion: v2
-appVersion: 10.6.8
+appVersion: 10.6.9
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
       - bitnami-common
-    version: 1.x.x
+    version: 2.x.x
   - name: helm-utils
     repository: https://charts.nobidev.com
     version: 1.x.x
@@ -29,4 +29,4 @@ sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/mariadb
   - https://github.com/prometheus/mysqld_exporter
   - https://mariadb.org
-version: 11.1.6
+version: 11.2.0

@@ -7,7 +7,7 @@ dependencies:
     repository: https://charts.bitnami.com/bitnami
     tags:
       - bitnami-common
-    version: 1.x.x
+    version: 2.x.x
   - name: helm-utils
     repository: https://charts.nobidev.com
     version: 1.x.x
@@ -27,4 +27,4 @@ name: etcd
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/etcd
   - https://coreos.com/etcd/
-version: 8.3.7
+version: 8.4.3
