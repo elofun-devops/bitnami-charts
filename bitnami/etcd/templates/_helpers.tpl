@@ -192,3 +192,13 @@ etcd: disasterRecovery
     Please enable persistence (--set persistence.enabled=true)
 {{- end -}}
 {{- end -}}
+
+{{- define "etcd.rootPassword" -}}
+{{- $pwd := include "etcd.generateRootPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" "etcd.rootPassword" "value" $pwd) -}}
+{{- end -}}
+
+{{- define "etcd.generateRootPassword" -}}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "etcd.secretName" .) "key" "etcd-root-password" "providedValues" (list "auth.rbac.rootPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- end -}}

@@ -116,4 +116,4 @@ To connect to your etcd server from outside the cluster execute the following co
   {{- $requiredPassword = append $requiredPassword $requiredEtcdPassword -}}
 {{- end -}}
 {{- $requiredEtcdPasswordErrors := include "common.validations.values.multiple.empty" (dict "required" $requiredPassword "context" $) -}}
-{{- include "common.errors.upgrade.passwords.empty" (dict "validationErrors" (list $requiredEtcdPasswordErrors) "context" $) -}}
+{{- /* include "common.errors.upgrade.passwords.empty" (dict "validationErrors" (list $requiredEtcdPasswordErrors) "context" $) */ -}}
