@@ -150,7 +150,7 @@ mariadb: architecture
 
 {{- define "mariadb.rootPassword" -}}
 {{- $pwd := include "mariadb.generateRootPassword" . }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.rootPassword" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.rootPassword" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "mariadb.generateRootPassword" -}}
@@ -164,7 +164,7 @@ mariadb: architecture
 
 {{- define "mariadb.password" -}}
 {{- $pwd := include "mariadb.generatePassword" . }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.password" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.password" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "mariadb.generatePassword" -}}
@@ -178,7 +178,7 @@ mariadb: architecture
 
 {{- define "mariadb.replicationPassword" -}}
 {{- $pwd := include "mariadb.generateReplicationPassword" . }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "mariadb.replicationPassword" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.replicationPassword" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "mariadb.generateReplicationPassword" -}}

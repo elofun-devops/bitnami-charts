@@ -200,7 +200,7 @@ Return Redis&reg; password
 */}}
 {{- define "redis.password" -}}
 {{- $pwd := include "redis.generatePassword" . }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "redis.password" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.redis.password" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "redis.generatePassword" -}}

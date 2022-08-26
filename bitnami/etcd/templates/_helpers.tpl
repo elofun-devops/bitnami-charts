@@ -195,7 +195,7 @@ etcd: disasterRecovery
 
 {{- define "etcd.rootPassword" -}}
 {{- $pwd := include "etcd.generateRootPassword" . }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "etcd.rootPassword" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.etcd.rootPassword" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "etcd.generateRootPassword" -}}
