@@ -400,15 +400,15 @@ Return the path to the CA cert file.
 
 {{- define "postgresql.secrets.postgres-password" -}}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "postgres-password" "providedValues" (list "global.postgresql.auth.postgresPassword" "auth.postgresPassword") "context" $) }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "postgresql.secrets.postgres-password" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.postgresql.secrets.postgres-password" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "postgresql.secrets.password" -}}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "password" "providedValues" (list "global.postgresql.auth.password" "auth.password") "context" $) }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "postgresql.secrets.password" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.postgresql.secrets.password" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
 
 {{- define "postgresql.secrets.replication-password" -}}
 {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
-{{- include "helm.kv.getOrSet" (dict "context" $ "key" "postgresql.secrets.replication-password" "value" $pwd) -}}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.postgresql.secrets.replication-password" .Release.FullName) "value" $pwd) -}}
 {{- end -}}
