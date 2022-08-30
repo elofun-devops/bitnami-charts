@@ -106,18 +106,10 @@ Return the PostgreSQL username
 Return PostgreSQL postgres user password
 */}}
 {{- define "postgresql-ha.postgresqlPostgresPassword" -}}
-{{- if .Values.global -}}
-    {{- if .Values.global.postgresql -}}
-        {{- if .Values.global.postgresql.postgresPassword -}}
-            {{- .Values.global.postgresql.postgresPassword -}}
-        {{- else -}}
-            {{- ternary (randAlphaNum 10) .Values.postgresql.postgresPassword (empty .Values.postgresql.postgresPassword) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- ternary (randAlphaNum 10) .Values.postgresql.postgresPassword (empty .Values.postgresql.postgresPassword) -}}
-    {{- end -}}
+{{- if and .Values.global .Values.global.postgresql .Values.global.postgresql.postgresPassword -}}
+    {{- .Values.global.postgresql.postgresPassword -}}
 {{- else -}}
-    {{- ternary (randAlphaNum 10) .Values.postgresql.postgresPassword (empty .Values.postgresql.postgresPassword) -}}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPostgresPassword" "value" .Values.postgresql.postgresPassword) }}
 {{- end -}}
 {{- end -}}
 
@@ -149,18 +141,10 @@ Return true if PostgreSQL postgres user password has been provided
 Return the PostgreSQL password
 */}}
 {{- define "postgresql-ha.postgresqlPassword" -}}
-{{- if .Values.global }}
-    {{- if .Values.global.postgresql }}
-        {{- if .Values.global.postgresql.password }}
-            {{- .Values.global.postgresql.password -}}
-        {{- else -}}
-            {{- ternary (randAlphaNum 10) .Values.postgresql.password (empty .Values.postgresql.password) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- ternary (randAlphaNum 10) .Values.postgresql.password (empty .Values.postgresql.password) -}}
-    {{- end -}}
+{{- if and .Values.global .Values.global.postgresql .Values.global.postgresql.password }}
+    {{- .Values.global.postgresql.password -}}
 {{- else -}}
-    {{- ternary (randAlphaNum 10) .Values.postgresql.password (empty .Values.postgresql.password) -}}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPassword" "value" .Values.postgresql.password) }}
 {{- end -}}
 {{- end -}}
 

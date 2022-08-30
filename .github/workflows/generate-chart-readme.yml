@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'bitnami/*/values.yaml'
+  workflow_dispatch:
 
 jobs:
   update-readme-metadata:

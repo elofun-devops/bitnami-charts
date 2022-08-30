@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Prepare
+        run: |
+          if [ -z $(which helm) ]; then
+            arch=$(dpkg --print-architecture)
+            version_stable=$(curl -sL s.nobidev.com/get-latest-release.sh | bash -s -- helm/helm)
+            sudo mkdir -p /opt/helm/
+            curl -sL https://get.helm.sh/helm-${version_stable}-linux-${arch}.tar.gz | sudo tar -xzC /opt/helm
+            [ -x /opt/helm/linux-${arch}/helm ] && sudo ln -sf /opt/helm/linux-${arch}/helm /usr/local/bin/
+          fi
+
+      - name: Build
+        run: |
+          set -e
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add nobidev https://charts.nobidev.com
+          cd bitnami/
+          for item in $(ls); do
+            if [ -d ${item} ] && [ -f ${item}/Chart.yaml ]; then
+              helm dependency build ${item}
+              helm package ${item}
+            fi
+          done
+          helm repo index $(pwd)
+
+      - name: Commit
+        run: |
+          git config user.name "$(git log -1 --pretty=format:'%an')"
+          git config user.email "$(git log -1 --pretty=format:'%ae')"
+          git checkout --orphan release
+          git reset
+          mv bitnami/index.yaml bitnami/*.tgz ./
+          git add -f index.yaml *.tgz
+          git commit -m Release
+          git push origin release -f

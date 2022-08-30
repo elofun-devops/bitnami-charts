@@ -147,3 +147,45 @@ mariadb: architecture
     "replication". Please set a valid architecture (--set architecture="xxxx")
 {{- end -}}
 {{- end -}}
+
+{{- define "mariadb.rootPassword" -}}
+{{- $pwd := include "mariadb.generateRootPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.rootPassword" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generateRootPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MariaDB Root Password is required!" .Values.auth.rootPassword }}
+{{- end }}
+{{- end -}}
+
+{{- define "mariadb.password" -}}
+{{- $pwd := include "mariadb.generatePassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.password" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generatePassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-password" "providedValues" (list "auth.password") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MariaDB Database Password is required!" .Values.auth.password }}
+{{- end }}
+{{- end -}}
+
+{{- define "mariadb.replicationPassword" -}}
+{{- $pwd := include "mariadb.generateReplicationPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mariadb.replicationPassword" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mariadb.generateReplicationPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mariadb-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MariaDB Replication Password is required!" .Values.auth.replicationPassword }}
+{{- end }}
+{{- end -}}

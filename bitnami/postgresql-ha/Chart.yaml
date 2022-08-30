@@ -8,6 +8,9 @@ dependencies:
     tags:
       - bitnami-common
     version: 2.x.x
+  - name: helm-utils
+    repository: https://charts.nobidev.com
+    version: 1.x.x
 description: This PostgreSQL cluster solution includes the PostgreSQL replication manager, an open-source tool for managing replication and failover on PostgreSQL clusters.
 engine: gotpl
 home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
