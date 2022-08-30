@@ -3,7 +3,7 @@
 apiVersion: {{ include "common.capabilities.statefulset.apiVersion" . }}
 kind: StatefulSet
 metadata:
-  name: {{ printf "%s-node" (include "common.names.fullname" .) }}
+  name: {{ include "redis.sentinel.name" . }}
   namespace: {{ .Release.Namespace | quote }}
   labels: {{- include "common.labels.standard" . | nindent 4 }}
     app.kubernetes.io/component: node
@@ -405,7 +405,7 @@ spec:
               command:
                 - sh
                 - -c
-                - /health/ping_sentinel.sh {{ .Values.sentinel.livenessProbe.timeoutSeconds }}
+                - /health/ping_sentinel.sh {{ .Values.sentinel.readinessProbe.timeoutSeconds }}
           {{- else if .Values.sentinel.customReadinessProbe }}
           readinessProbe: {{- include "common.tplvalues.render" (dict "value" .Values.sentinel.customReadinessProbe "context" $) | nindent 12 }}
           {{- end }}

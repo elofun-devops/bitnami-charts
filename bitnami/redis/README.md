@@ -319,6 +319,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name                                          | Description                                                                                                                                 | Value                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| `sentinel.suffixName`                         | Allows to edit the suffix of name                                                                                                           | `node`                   |
 | `sentinel.enabled`                            | Use Redis&reg; Sentinel on Redis&reg; pods.                                                                                                 | `false`                  |
 | `sentinel.image.registry`                     | Redis&reg; Sentinel image registry                                                                                                          | `docker.io`              |
 | `sentinel.image.repository`                   | Redis&reg; Sentinel image repository                                                                                                        | `bitnami/redis-sentinel` |
@@ -332,7 +333,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `sentinel.getMasterTimeout`                   | Amount of time to allow before get_sentinel_master_info() times out.                                                                        | `220`                    |
 | `sentinel.automateClusterRecovery`            | Automate cluster recovery in cases where the last replica is not considered a good replica and Sentinel won't automatically failover to it. | `false`                  |
 | `sentinel.downAfterMilliseconds`              | Timeout for detecting a Redis&reg; node is down                                                                                             | `60000`                  |
-| `sentinel.failoverTimeout`                    | Timeout for performing a election failover                                                                                                  | `18000`                  |
+| `sentinel.failoverTimeout`                    | Timeout for performing a election failover                                                                                                  | `180000`                 |
 | `sentinel.parallelSyncs`                      | Number of replicas that can be reconfigured in parallel to use the new master after a failover                                              | `1`                      |
 | `sentinel.configuration`                      | Configuration for Redis&reg; Sentinel nodes                                                                                                 | `""`                     |
 | `sentinel.command`                            | Override default container command (useful when using custom images)                                                                        | `[]`                     |
