@@ -111,7 +111,7 @@ Return PostgreSQL postgres user password
 {{- else -}}
     {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-password" "providedValues" (list "postgresql.postgresPassword") "context" $) }}
     {{- if (not (eq (include "postgresql-ha.postgresqlUsername" .) "postgres")) }}
-        {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-postgres-password" "providedValues" (list "postgresql.postgresPassword") "context" $) }}
+        {{- $pwd = include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-postgres-password" "providedValues" (list "postgresql.postgresPassword") "context" $) }}
     {{- end -}}
     {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPostgresPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
@@ -176,18 +176,11 @@ Return the Pgpool Admin username
 Return the Pgpool Admin password
 */}}
 {{- define "postgresql-ha.pgpoolAdminPassword" -}}
-{{- if .Values.global -}}
-    {{- if .Values.global.pgpool -}}
-        {{- if .Values.global.pgpool.adminPassword -}}
-            {{- .Values.global.pgpool.adminPassword -}}
-        {{- else -}}
-            {{- ternary (randAlphaNum 10) .Values.pgpool.adminPassword (empty .Values.pgpool.adminPassword) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- ternary (randAlphaNum 10) .Values.pgpool.adminPassword (empty .Values.pgpool.adminPassword) -}}
-    {{- end -}}
+{{- if and .Values.global .Values.global.pgpool .Values.global.pgpool.adminPassword -}}
+    {{- .Values.global.pgpool.adminPassword -}}
 {{- else -}}
-    {{- ternary (randAlphaNum 10) .Values.pgpool.adminPassword (empty .Values.pgpool.adminPassword) -}}
+    {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.pgpool" .) "key" "admin-password" "providedValues" (list "pgpool.adminPassword") "context" $) }}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.pgpoolAdminPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
 {{- end -}}
 
@@ -241,18 +234,11 @@ Return the PostgreSQL repmgr username
 Return the PostgreSQL repmgr password
 */}}
 {{- define "postgresql-ha.postgresqlRepmgrPassword" -}}
-{{- if .Values.global -}}
-    {{- if .Values.global.postgresql -}}
-        {{- if .Values.global.postgresql.repmgrPassword -}}
-            {{- .Values.global.postgresql.repmgrPassword -}}
-        {{- else -}}
-            {{- ternary (randAlphaNum 10) .Values.postgresql.repmgrPassword (empty .Values.postgresql.repmgrPassword) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- ternary (randAlphaNum 10) .Values.postgresql.repmgrPassword (empty .Values.postgresql.repmgrPassword) -}}
-    {{- end -}}
+{{- if and .Values.global .Values.global.postgresql .Values.global.postgresql.repmgrPassword -}}
+    {{- .Values.global.postgresql.repmgrPassword -}}
 {{- else -}}
-    {{- ternary (randAlphaNum 10) .Values.postgresql.repmgrPassword (empty .Values.postgresql.repmgrPassword) -}}
+    {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "repmgr-password" "providedValues" (list "postgresql.repmgrPassword") "context" $) }}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlRepmgrPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
 {{- end -}}
 
@@ -442,18 +428,11 @@ Get the pgpool initialization scripts Secret name.
 Return the LDAP bind password
 */}}
 {{- define "postgresql-ha.ldapPassword" -}}
-{{- if .Values.global }}
-    {{- if .Values.global.ldap }}
-        {{- if .Values.global.ldap.bindpw }}
-            {{- .Values.global.ldap.bindpw -}}
-        {{- else -}}
-            {{- ternary (randAlphaNum 10) .Values.ldap.bindpw (empty .Values.ldap.bindpw) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- ternary (randAlphaNum 10) .Values.ldap.bindpw (empty .Values.ldap.bindpw) -}}
-    {{- end -}}
+{{- if and .Values.global .Values.global.ldap .Values.global.ldap.bindpw }}
+    {{- .Values.global.ldap.bindpw -}}
 {{- else -}}
-    {{- ternary (randAlphaNum 10) .Values.ldap.bindpw (empty .Values.ldap.bindpw) -}}
+    {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.ldap" .) "key" "bind-password" "providedValues" (list "ldap.bindpw") "context" $) }}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.ldapPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
 {{- end -}}
 
