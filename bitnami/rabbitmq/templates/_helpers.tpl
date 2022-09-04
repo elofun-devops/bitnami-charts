@@ -225,3 +225,13 @@ Get the initialization scripts volume name.
 {{- define "rabbitmq.initScripts" -}}
 {{- printf "%s-init-scripts" (include "common.names.fullname" .) -}}
 {{- end -}}
+
+{{- define "rabbitmq.password" -}}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "rabbitmq-password" "length" 16 "providedValues" (list "auth.password") "context" $) }}
+{{- include "helm.password.generate" (dict "context" $ "key" "rabbitmq.password" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
+{{- end -}}
+
+{{- define "rabbitmq.erlangCookie" -}}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "rabbitmq-erlang-cookie" "length" 32 "providedValues" (list "auth.erlangCookie") "context" $) }}
+{{- include "helm.password.generate" (dict "context" $ "key" "rabbitmq.erlangCookie" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
+{{- end -}}
