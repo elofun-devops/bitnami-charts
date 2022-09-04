@@ -159,3 +159,45 @@ Compile all warnings into a single message, and call fail.
 {{- printf "\nVALUES VALIDATION:\n%s" $message | fail -}}
 {{- end -}}
 {{- end -}}
+
+{{- define "mysql.rootPassword" -}}
+{{- $pwd := include "mysql.generateRootPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mysql.rootPassword" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mysql.generateRootPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mysql-root-password" "providedValues" (list "auth.rootPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MySQL Root Password is required!" .Values.auth.rootPassword }}
+{{- end }}
+{{- end -}}
+
+{{- define "mysql.password" -}}
+{{- $pwd := include "mysql.generatePassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mysql.password" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mysql.generatePassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mysql-password" "providedValues" (list "auth.password") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MySQL Database Password is required!" .Values.auth.password }}
+{{- end }}
+{{- end -}}
+
+{{- define "mysql.replicationPassword" -}}
+{{- $pwd := include "mysql.generateReplicationPassword" . }}
+{{- include "helm.kv.getOrSet" (dict "context" $ "key" (printf "%s.mysql.replicationPassword" .Release.FullName) "value" $pwd) -}}
+{{- end -}}
+
+{{- define "mysql.generateReplicationPassword" -}}
+{{- if (not .Values.auth.forcePassword) }}
+{{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "common.names.fullname" .) "key" "mysql-replication-password" "providedValues" (list "auth.replicationPassword") "context" $) }}
+{{- include "helm.values.unquote" $pwd | b64dec }}
+{{- else }}
+{{- required "A MySQL Replication Password is required!" .Values.auth.replicationPassword }}
+{{- end }}
+{{- end -}}
