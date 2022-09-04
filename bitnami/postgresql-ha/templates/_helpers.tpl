@@ -109,7 +109,11 @@ Return PostgreSQL postgres user password
 {{- if and .Values.global .Values.global.postgresql .Values.global.postgresql.postgresPassword -}}
     {{- .Values.global.postgresql.postgresPassword -}}
 {{- else -}}
-    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPostgresPassword" "value" .Values.postgresql.postgresPassword) }}
+    {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-password" "providedValues" (list "postgresql.postgresPassword") "context" $) }}
+    {{- if (not (eq (include "postgresql-ha.postgresqlUsername" .) "postgres")) }}
+        {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-postgres-password" "providedValues" (list "postgresql.postgresPassword") "context" $) }}
+    {{- end -}}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPostgresPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
 {{- end -}}
 
@@ -144,7 +148,8 @@ Return the PostgreSQL password
 {{- if and .Values.global .Values.global.postgresql .Values.global.postgresql.password }}
     {{- .Values.global.postgresql.password -}}
 {{- else -}}
-    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPassword" "value" .Values.postgresql.password) }}
+    {{- $pwd := include "common.secrets.passwords.manage" (dict "secret" (include "postgresql-ha.postgresql" .) "key" "postgresql-password" "providedValues" (list "postgresql.password") "context" $) }}
+    {{- include "helm.password.generate" (dict "context" $ "key" "postgresql-ha.postgresqlPassword" "value" (include "helm.values.unquote" $pwd | b64dec)) }}
 {{- end -}}
 {{- end -}}
 
