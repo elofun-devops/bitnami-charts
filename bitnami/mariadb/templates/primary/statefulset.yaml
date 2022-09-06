@@ -256,7 +256,7 @@ spec:
             {{- end }}
             {{- if or .Values.primary.configuration .Values.primary.existingConfigmap }}
             - name: config
-              mountPath: /opt/bitnami/mariadb/conf/my.cnf
+              mountPath: /opt/bitnami/mariadb/conf/my_custom.cnf
               subPath: my.cnf
             {{- end }}
             {{- if and .Values.auth.usePasswordFiles (not .Values.auth.customPasswordFiles) }}
