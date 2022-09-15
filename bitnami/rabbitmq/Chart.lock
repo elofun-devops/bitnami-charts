@@ -1,9 +1,9 @@
 dependencies:
 - name: common
   repository: https://charts.bitnami.com/bitnami
-  version: 2.0.1
+  version: 2.0.3
 - name: helm-utils
   repository: https://charts.nobidev.com
-  version: 1.0.15
-digest: sha256:afef13d8096f1bf13a2242b045f8bf2563f7a23378d2390ad83222aa591901c0
-generated: "2022-09-04T21:56:58.113081739Z"
+  version: 1.0.40
+digest: sha256:e7a1e3d9a415c3864e18f2eff6d75c8f81a0beb8bfff75324292fd78b751b11a
+generated: "2022-09-15T20:14:07.531465967Z"
