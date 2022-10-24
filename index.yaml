@@ -1,0 +1,3639 @@
+apiVersion: v1
+entries:
+  airflow:
+  - annotations:
+      category: WorkFlow
+    apiVersion: v2
+    appVersion: 2.3.4
+    created: "2022-10-24T17:17:59.286106705Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Airflow is a tool to express and execute workflows as directed
+      acyclic graphs (DAGs). It includes utilities to schedule tasks, monitor task
+      progress and handle task dependencies.
+    digest: 9c5ba955b2d6222a07f3e0eb761e60af86bffe6f5c61612ddb7e7c5685677fa3
+    home: https://github.com/bitnami/charts/tree/master/bitnami/airflow
+    icon: https://bitnami.com/assets/stacks/airflow/img/airflow-stack-220x234.png
+    keywords:
+    - apache
+    - airflow
+    - workflow
+    - dag
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: airflow
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/airflow
+    - https://airflow.apache.org/
+    urls:
+    - airflow-13.1.6.tgz
+    version: 13.1.6
+  apache:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.4.54
+    created: "2022-10-24T17:17:59.288664863Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache HTTP Server is an open-source HTTP server. The goal of this
+      project is to provide a secure, efficient and extensible server that provides
+      HTTP services in sync with the current HTTP standards.
+    digest: 732939a0405d77ce3f99b5f6986fb1369ec878b0332e4e7ba6f53986195e0db1
+    home: https://github.com/bitnami/charts/tree/master/bitnami/apache
+    icon: https://bitnami.com/assets/stacks/apache/img/apache-stack-220x234.png
+    keywords:
+    - apache
+    - http
+    - https
+    - www
+    - web
+    - reverse proxy
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: apache
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/apache
+    - https://httpd.apache.org
+    urls:
+    - apache-9.2.5.tgz
+    version: 9.2.5
+  argo-cd:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.4.14
+    created: "2022-10-24T17:17:59.302018066Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Argo CD is a continuous delivery tool for Kubernetes based on GitOps.
+    digest: 42156e8549143bfe95649c00115cfab70ae5f8cadfbac484b3843ab196c58c5a
+    home: https://argoproj.github.io/argo-cd/
+    icon: https://bitnami.com/assets/stacks/argo-cd/img/argo-cd-stack-220x234.png
+    keywords:
+    - Continuous delivery
+    - Continuous deployment
+    - Devops
+    - Kubernetes
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: argo-cd
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/argo-cd
+    - https://github.com/argoproj/argo-cd/
+    - https://github.com/bitnami/containers/tree/main/bitnami/dex
+    - https://github.com/dexidp/dex
+    urls:
+    - argo-cd-4.2.4.tgz
+    version: 4.2.4
+  argo-workflows:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.4.1
+    created: "2022-10-24T17:17:59.314018838Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Argo Workflows is meant to orchestrate Kubernetes jobs in parallel.
+      It uses DAG and step-based workflows
+    digest: f4bf7c41901bf37479a42ecd71ce44c2a7ccc810a31e37c41eb226062ecdf6b9
+    home: https://argoproj.github.io/workflows/
+    icon: https://bitnami.com/assets/stacks/argo-workflows/img/argo-workflows-stack-220x234.png
+    keywords:
+    - Devops
+    - Kubernetes
+    - Jobs
+    - Continuous delivery
+    - Continous deployment
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: argo-workflows
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/argo-workflow-cli
+    - https://github.com/bitnami/containers/tree/main/bitnami/argo-workflow-controller
+    - https://github.com/bitnami/containers/tree/main/bitnami/argo-workflow-exec
+    - https://argoproj.github.io/workflows/
+    urls:
+    - argo-workflows-3.0.4.tgz
+    version: 3.0.4
+  aspnet-core:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 6.0.10
+    created: "2022-10-24T17:17:59.316507294Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: ASP.NET Core is an open-source framework for web application development
+      created by Microsoft. It runs on both the full .NET Framework, on Windows, and
+      the cross-platform .NET Core.
+    digest: 919bdd3460dd8afd7a1c5dc2432e84a887591353c18639006d658048bc3445be
+    home: https://github.com/bitnami/charts/tree/master/bitnami/aspnet-core
+    icon: https://bitnami.com/assets/stacks/aspnet-core/img/aspnet-core-stack-220x234.png
+    keywords:
+    - asp.net
+    - dotnet
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: aspnet-core
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/aspnet-core
+    - https://dotnet.microsoft.com/apps/aspnet
+    urls:
+    - aspnet-core-3.5.5.tgz
+    version: 3.5.5
+  cassandra:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.0.6
+    created: "2022-10-24T17:17:59.319509862Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Cassandra is an open source distributed database management
+      system designed to handle large amounts of data across many servers, providing
+      high availability with no single point of failure.
+    digest: dd36af656ba80966eda4bf96c092660646b74f1843b2be6b3ebb50d55e212002
+    home: https://github.com/bitnami/charts/tree/master/bitnami/cassandra
+    icon: https://bitnami.com/assets/stacks/cassandra/img/cassandra-stack-220x234.png
+    keywords:
+    - cassandra
+    - database
+    - nosql
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: cassandra
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/cassandra
+    - http://cassandra.apache.org
+    urls:
+    - cassandra-9.7.2.tgz
+    version: 9.7.2
+  cert-manager:
+  - annotations:
+      category: CertificateAuthority
+    apiVersion: v2
+    appVersion: 1.9.1
+    created: "2022-10-24T17:17:59.325463797Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Cert Manager is a Kubernetes add-on to automate the management and
+      issuance of TLS certificates from various issuing sources.
+    digest: 7d62689ccc1712264ba8cad8eb80d16e4671727851187b4d506310c7f57c46b5
+    home: https://github.com/jetstack/cert-manager
+    icon: https://bitnami.com/assets/stacks/cert-manager/img/cert-manager-stack-220x234.png
+    keywords:
+    - go
+    - security
+    - tls
+    - certificate
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: cert-manager
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/cert-manager
+    - https://github.com/bitnami/containers/tree/main/bitnami/cert-manager-webhook
+    - https://github.com/bitnami/containers/tree/main/bitnami/cainjector
+    - https://github.com/jetstack/cert-manager
+    urls:
+    - cert-manager-0.8.5.tgz
+    version: 0.8.5
+  clickhouse:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 22.9.3
+    created: "2022-10-24T17:17:59.333330476Z"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: ClickHouse is an open-source column-oriented OLAP database management
+      system. Use it to boost your database performance while providing linear scalability
+      and hardware efficiency.
+    digest: d7a6f434cad2e470336a1455fdb0556ea6609650ad1748fa61aaf3520062713c
+    home: https://clickhouse.com/
+    icon: https://bitnami.com/assets/stacks/clickhouse/img/clickhouse-stack-220x234.png
+    keywords:
+    - database
+    - sharding
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: clickhouse
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/clickhouse
+    - https://github.com/ClickHouse/ClickHouse
+    urls:
+    - clickhouse-1.0.0.tgz
+    version: 1.0.0
+  common:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.0.3
+    created: "2022-10-24T17:17:59.334096493Z"
+    description: A Library Helm Chart for grouping common logic between bitnami charts.
+      This chart is not deployable by itself.
+    digest: ed4fa8bfbbbcf6633841b5f16780166500eef23275b0baa733b6b74c12d3d207
+    home: https://github.com/bitnami/charts/tree/master/bitnami/common
+    icon: https://bitnami.com/downloads/logos/bitnami-mark.png
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    - bitnami
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: common
+    sources:
+    - https://github.com/bitnami/charts
+    - https://www.bitnami.com/
+    type: library
+    urls:
+    - common-2.0.3.tgz
+    version: 2.0.3
+  concourse:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 7.8.3
+    created: "2022-10-24T17:17:59.342352881Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.X.X
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Concourse is an automation system written in Go. It is most commonly
+      used for CI/CD, and is built to scale to any kind of automation pipeline, from
+      simple to complex.
+    digest: 9f7a5043e0705b1b2ceee1903dd1422027a3db1fe3a9e696798a8a60c086a444
+    home: https://github.com/concourse/concourse
+    icon: https://bitnami.com/assets/stacks/concourse/img/concourse-stack-220x234.png
+    keywords:
+    - concourse
+    - ci
+    - cd
+    - http
+    - web
+    - application
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: concourse
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/concourse
+    - https://github.com/concourse/concourse
+    urls:
+    - concourse-1.5.3.tgz
+    version: 1.5.3
+  consul:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 1.13.2
+    created: "2022-10-24T17:17:59.34717209Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: HashiCorp Consul is a tool for discovering and configuring services
+      in your infrastructure.
+    digest: 2651888e61c81813f7184845d30b05e44fcf986332e8c5fe4c9f00b84b8bab22
+    home: https://github.com/bitnami/charts/tree/master/bitnami/consul
+    icon: https://bitnami.com/assets/stacks/consul/img/consul-stack-220x234.png
+    keywords:
+    - discovering
+    - configuring
+    - services
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: consul
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/consul
+    - https://www.consul.io/
+    urls:
+    - consul-10.9.2.tgz
+    version: 10.9.2
+  contour:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.22.1
+    created: "2022-10-24T17:17:59.352369108Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Contour is an open source Kubernetes ingress controller that works
+      by deploying the Envoy proxy as a reverse proxy and load balancer.
+    digest: d0fc1ad2703e0fa87b145c24eac3540353dca9b5cb360cc05f7dba5f9d3d085f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/contour
+    icon: https://bitnami.com/assets/stacks/contour/img/contour-stack-220x234.png
+    keywords:
+    - ingress
+    - envoy
+    - contour
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: contour
+    sources:
+    - https://github.com/projectcontour/contour
+    - https://github.com/envoyproxy/envoy
+    - https://github.com/bitnami/containers/tree/main/bitnami/contour
+    - https://projectcontour.io
+    urls:
+    - contour-9.1.6.tgz
+    version: 9.1.6
+  contour-operator:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.22.1
+    created: "2022-10-24T17:17:59.35773553Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: The Contour Operator extends the Kubernetes API to create, configure
+      and manage instances of Contour on behalf of users.
+    digest: bc9af68d96480f5971f587563e65852b320cf1c1c4a6785fbf5477e52ecc6af3
+    home: https://github.com/projectcontour/contour-operator
+    icon: https://bitnami.com/assets/stacks/contour-operator/img/contour-operator-stack-220x234.png
+    keywords:
+    - contour
+    - operator
+    - ingress
+    - envoy
+    kubeVersion: '>= 1.21.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: contour-operator
+    sources:
+    - https://github.com/projectcontour/contour-operator
+    - https://github.com/bitnami/containers/tree/main/bitnami/contour-operator
+    urls:
+    - contour-operator-2.1.6.tgz
+    version: 2.1.6
+  discourse:
+  - annotations:
+      category: Forum
+    apiVersion: v2
+    appVersion: 2.8.9
+    created: "2022-10-24T17:17:59.372050454Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.X.X
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.X.X
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Discourse is an open source discussion platform with built-in moderation
+      and governance systems that let discussion communities protect themselves from
+      bad actors even without official moderators.
+    digest: da28a98102e4ab6e9b3a6e393270ddf784ec25a26771bfccec23b19f326c90b6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/discourse
+    icon: https://bitnami.com/assets/stacks/discourse/img/discourse-stack-220x234.png
+    keywords:
+    - community
+    - forum
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    - email: username.taken@gmail.com
+      name: paulczar
+    - email: preteluca@gmail.com
+      name: lucaprete
+    name: discourse
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/discourse
+    - https://github.com/spinnaker
+    - https://www.discourse.org/
+    urls:
+    - discourse-8.1.8.tgz
+    version: 8.1.8
+  dokuwiki:
+  - annotations:
+      category: Wiki
+    apiVersion: v2
+    appVersion: 20220731.1.0
+    created: "2022-10-24T17:17:59.374582312Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: DokuWiki is a standards-compliant wiki optimized for creating documentation.
+      Designed to be simple to use for small organizations, it stores all data in
+      plain text files so no database is required.
+    digest: de6cca3789d4a30c8d63a575d85b71ecbabfc57ba2e646145ed45a9d218f0553
+    home: https://github.com/bitnami/charts/tree/master/bitnami/dokuwiki
+    icon: https://bitnami.com/assets/stacks/dokuwiki/img/dokuwiki-stack-220x234.png
+    keywords:
+    - dokuwiki
+    - wiki
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: dokuwiki
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/dokuwiki
+    - http://www.dokuwiki.org/
+    urls:
+    - dokuwiki-13.1.6.tgz
+    version: 13.1.6
+  drupal:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 9.4.8
+    created: "2022-10-24T17:17:59.381210662Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Drupal is one of the most versatile open source content management
+      systems in the world. It is pre-configured with the Ctools and Views modules,
+      Drush and Let's Encrypt auto-configuration support.
+    digest: 33404af11b5b02fccfc884e1988f3ea6317bfd8e48ec1c33a1fb93d4ca0f537d
+    home: https://github.com/bitnami/charts/tree/master/bitnami/drupal
+    icon: https://bitnami.com/assets/stacks/drupal/img/drupal-stack-220x234.png
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: drupal
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/drupal
+    - https://www.drupal.org/
+    urls:
+    - drupal-12.5.8.tgz
+    version: 12.5.8
+  ejbca:
+  - annotations:
+      category: CertificateAuthority
+    apiVersion: v2
+    appVersion: 7.9.0-2
+    created: "2022-10-24T17:17:59.389326746Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - ejbca-database
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: EJBCA is an enterprise class PKI Certificate Authority software,
+      built using Java (JEE) technology.
+    digest: 076ac937f9065228102732212d174f28ee64a2eeefb239e24ff365c975922ef0
+    home: https://github.com/bitnami/charts/tree/master/bitnami/ejbca
+    icon: https://bitnami.com/assets/stacks/ejbca/img/ejbca-stack-220x234.png
+    keywords:
+    - ejbca
+    - ca
+    - pki
+    - certificate
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: ejbca
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/ejbca
+    - https://www.ejbca.org/
+    urls:
+    - ejbca-6.3.6.tgz
+    version: 6.3.6
+  elasticsearch:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 8.4.3
+    created: "2022-10-24T17:17:59.397905441Z"
+    dependencies:
+    - condition: global.kibanaEnabled
+      name: kibana
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Elasticsearch is a distributed search and analytics engine. It is
+      used for web search, log monitoring, and real-time analytics. Ideal for Big
+      Data applications.
+    digest: 66bc9fa0c60a8cad8764398473236f53858901c158c343aa67eb7deb82f2875f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/elasticsearch
+    icon: https://bitnami.com/assets/stacks/elasticsearch/img/elasticsearch-stack-220x234.png
+    keywords:
+    - elasticsearch
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: elasticsearch
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch
+    - https://www.elastic.co/products/elasticsearch
+    urls:
+    - elasticsearch-19.4.4.tgz
+    version: 19.4.4
+  etcd:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 3.5.5
+    created: "2022-10-24T17:17:59.402348842Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: etcd is a distributed key-value store designed to securely store
+      data across a cluster. etcd is widely used in production on account of its reliability,
+      fault-tolerance and ease of use.
+    digest: d744bef905da9d9a092daad92074a22ca85871506d1b89d8247904e9d445cc66
+    home: https://github.com/bitnami/charts/tree/master/bitnami/etcd
+    icon: https://bitnami.com/assets/stacks/etcd/img/etcd-stack-220x234.png
+    keywords:
+    - etcd
+    - cluster
+    - database
+    - cache
+    - key-value
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: etcd
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/etcd
+    - https://coreos.com/etcd/
+    urls:
+    - etcd-8.5.5.tgz
+    version: 8.5.5
+  external-dns:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 0.12.2
+    created: "2022-10-24T17:17:59.405922823Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: ExternalDNS is a Kubernetes addon that configures public DNS servers
+      with information about exposed Kubernetes services to make them discoverable.
+    digest: b84a9dc82cbb1e8bfe38e87e05368f6c1e88cfacad3e0f727a464c2654ad4713
+    home: https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    icon: https://bitnami.com/assets/stacks/external-dns/img/external-dns-stack-220x234.png
+    keywords:
+    - external-dns
+    - network
+    - dns
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: external-dns
+    sources:
+    - https://github.com/kubernetes-sigs/external-dns
+    - https://github.com/bitnami/containers/tree/main/bitnami/external-dns
+    - https://github.com/kubernetes-sigs/external-dns
+    urls:
+    - external-dns-6.10.2.tgz
+    version: 6.10.2
+  fluentd:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 1.15.2
+    created: "2022-10-24T17:17:59.40978911Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Fluentd collects events from various data sources and writes them
+      to files, RDBMS, NoSQL, IaaS, SaaS, Hadoop and so on.
+    digest: 42e0051944cc43a28e1cfb1d28d6e73b37facc2913e4c6e1836ed491e70e6443
+    home: https://github.com/bitnami/charts/tree/master/bitnami/fluentd
+    icon: https://bitnami.com/assets/stacks/fluentd/img/fluentd-stack-220x234.png
+    keywords:
+    - fluentd
+    - logging
+    - logs
+    - data
+    - collector
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: fluentd
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/fluentd
+    - https://www.fluentd.org/
+    urls:
+    - fluentd-5.5.3.tgz
+    version: 5.5.3
+  geode:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 1.15.0
+    created: "2022-10-24T17:17:59.414565719Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Geode is a data management platform that provides advanced
+      capabilities for data-intensive applications.
+    digest: 7ec24929e0e284e7b83b830e62fa44eda0f95d6d6d5ce834270288a5398c4152
+    home: https://github.com/bitnami/charts/tree/master/bitnami/geode
+    icon: https://bitnami.com/assets/stacks/geode/img/geode-stack-220x234.png
+    keywords:
+    - apache
+    - geode
+    - database
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: geode
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/geode
+    - https://github.com/apache/geode
+    urls:
+    - geode-1.1.4.tgz
+    version: 1.1.4
+  ghost:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 5.18.0
+    created: "2022-10-24T17:17:59.420929463Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - ghost-database
+      version: 9.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Ghost is an open source publishing platform designed to create blogs,
+      magazines, and news sites. It includes a simple markdown editor with preview,
+      theming, and SEO built-in to simplify editing.
+    digest: e02917e9223d52f88d8b3e12d2b1beacbe19ea76e91dd984a12ff7cad1032411
+    home: https://github.com/bitnami/charts/tree/master/bitnami/ghost
+    icon: https://bitnami.com/assets/stacks/ghost/img/ghost-stack-220x234.png
+    keywords:
+    - ghost
+    - blog
+    - http
+    - web
+    - application
+    - nodejs
+    - javascript
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: ghost
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/ghost
+    - https://www.ghost.org/
+    urls:
+    - ghost-19.1.19.tgz
+    version: 19.1.19
+  grafana:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 9.1.7
+    created: "2022-10-24T17:17:59.424738349Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Grafana is an open source metric analytics and visualization suite
+      for visualizing time series data that supports various types of data sources.
+    digest: 248a09577f3b04edbd590f303fff1f6c31dcc7585e158eb40848c96bf689f247
+    home: https://github.com/bitnami/charts/tree/master/bitnami/grafana
+    icon: https://bitnami.com/assets/stacks/grafana/img/grafana-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - metrics
+    - logs
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: grafana
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/grafana
+    - https://grafana.com/
+    urls:
+    - grafana-8.2.11.tgz
+    version: 8.2.11
+  grafana-loki:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.1
+    created: "2022-10-24T17:17:59.435647897Z"
+    dependencies:
+    - alias: memcachedchunks
+      condition: memcachedchunks.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - alias: memcachedfrontend
+      condition: memcachedfrontend.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - alias: memcachedindexqueries
+      condition: memcachedindexqueries.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - alias: memcachedindexwrites
+      condition: memcachedindexwrites.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Grafana Loki is a horizontally scalable, highly available, and multi-tenant
+      log aggregation system. It provides real-time long tailing and full persistence
+      to object storage.
+    digest: 7341277bc04db4926de9ad96cfbe211372ead65ca572261b95b39702e0b0e7ac
+    home: https://github.com/grafana/loki/
+    icon: https://bitnami.com/assets/stacks/grafana-loki/img/grafana-loki-stack-220x234.png
+    keywords:
+    - grafana
+    - tracing
+    - metrics
+    - infrastructure
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: grafana-loki
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/grafana-loki
+    - https://github.com/grafana/loki/
+    urls:
+    - grafana-loki-2.4.5.tgz
+    version: 2.4.5
+  grafana-operator:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 4.7.0
+    created: "2022-10-24T17:17:59.440952017Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Grafana Operator is a Kubernetes operator that enables the installation
+      and management of Grafana instances, dashboards and plugins.
+    digest: e633f8eab8971f68ffafaa37a225a3c806ddaee5b2a4c928782ae097313cf614
+    home: https://github.com/grafana-operator/grafana-operator
+    icon: https://bitnami.com/assets/stacks/grafana/img/grafana-stack-220x234.png
+    keywords:
+    - grafana
+    - operator
+    - monitoring
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: grafana-operator
+    sources:
+    - https://github.com/grafana-operator/grafana-operator
+    - https://github.com/bitnami/containers/tree/main/bitnami/grafana-operator
+    urls:
+    - grafana-operator-2.7.7.tgz
+    version: 2.7.7
+  grafana-tempo:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.5.0
+    created: "2022-10-24T17:17:59.448674392Z"
+    dependencies:
+    - condition: memcached.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Grafana Tempo is a distributed tracing system that has out-of-the-box
+      integration with Grafana. It is highly scalable and works with many popular
+      tracing protocols.
+    digest: 6173d70f1493e2c07a8529677473dff39721d5e520154ed82a3e2bce3b6d4163
+    home: https://github.com/grafana/tempo/
+    icon: https://bitnami.com/assets/stacks/grafana-tempo/img/grafana-tempo-stack-220x234.png
+    keywords:
+    - grafana
+    - tracing
+    - metrics
+    - infrastructure
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: grafana-tempo
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/grafana-tempo
+    - https://github.com/grafana/tempo/
+    urls:
+    - grafana-tempo-1.4.3.tgz
+    version: 1.4.3
+  haproxy:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.6
+    created: "2022-10-24T17:17:59.45167106Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: HAProxy is a TCP proxy and a HTTP reverse proxy. It supports SSL
+      termination and offloading, TCP and HTTP normalization, traffic regulation,
+      caching and protection against DDoS attacks.
+    digest: 6e525f05e4a4d6523244f0b425101b0c2697e672edd1362e6168eb6fea14782d
+    home: https://www.haproxy.org/
+    icon: https://bitnami.com/assets/stacks/haproxy/img/haproxy-stack-220x234.png
+    keywords:
+    - haproxy
+    - proxy
+    - infrastructure
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: haproxy
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/haproxy
+    - https://github.com/haproxytech/haproxy
+    urls:
+    - haproxy-0.5.5.tgz
+    version: 0.5.5
+  haproxy-intel:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.6
+    created: "2022-10-24T17:17:59.454789631Z"
+    dependencies:
+    - name: haproxy
+      repository: https://charts.bitnami.com/bitnami
+      version: 0.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: HAProxy is a high-performance, open-source load balancer and reverse
+      proxy for TCP and HTTP applications. This image is optimized with Intel(R) QuickAssist
+      Technology OpenSSL* Engine (QAT_Engine).
+    digest: 1fcbccd548c7f78ec78905566bef74869d0d7357d16426cd2c186dfcffc5dc57
+    home: https://www.haproxy.org/
+    icon: https://bitnami.com/assets/stacks/haproxy/img/haproxy-stack-220x234.png
+    keywords:
+    - haproxy
+    - proxy
+    - infrastructure
+    - intel
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: haproxy-intel
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/haproxy-intel
+    - https://github.com/haproxytech/haproxy
+    urls:
+    - haproxy-intel-0.2.6.tgz
+    version: 0.2.6
+  harbor:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.1
+    created: "2022-10-24T17:17:59.475484901Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Harbor is an open source trusted cloud-native registry to store,
+      sign, and scan content. It adds functionalities like security, identity, and
+      management to the open source Docker distribution.
+    digest: 1126bc6cbf69d2399e206e1b827cf7837862a0ca609ac00b5c0fba3e73d98f36
+    home: https://github.com/bitnami/charts/tree/master/bitnami/harbor
+    icon: https://bitnami.com/assets/stacks/harbor-core/img/harbor-core-stack-220x234.png
+    keywords:
+    - docker
+    - registry
+    - vulnerability
+    - scan
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: harbor
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/harbor-core
+    - https://github.com/bitnami/containers/tree/main/bitnami/harbor-portal
+    - https://github.com/bitnami/containers/tree/main/bitnami/harbor-jobservice
+    - https://github.com/bitnami/containers/tree/main/bitnami/harbor-registry
+    - https://github.com/bitnami/containers/tree/main/bitnami/harbor-registryctl
+    - https://goharbor.io/
+    urls:
+    - harbor-15.2.5.tgz
+    version: 15.2.5
+  influxdb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 2.4.0
+    created: "2022-10-24T17:17:59.479770298Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: InfluxDB(TM) is an open source time-series database. It is a core
+      component of the TICK (Telegraf, InfluxDB(TM), Chronograf, Kapacitor) stack.
+    digest: c8ad7e84cc22568e77079fa4fb9cd9e4fad9bce6951d5b53cc76d55b9b6f68d1
+    home: https://github.com/bitnami/charts/tree/master/bitnami/influxdb
+    icon: https://bitnami.com/assets/stacks/influxdb/img/influxdb-stack-220x234.png
+    keywords:
+    - influxdb
+    - tick
+    - database
+    - timeseries
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: influxdb
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/influxdb
+    - https://www.influxdata.com/products/influxdb-overview/
+    urls:
+    - influxdb-5.4.6.tgz
+    version: 5.4.6
+  jasperreports:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 8.1.0
+    created: "2022-10-24T17:17:59.485878736Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: JasperReports Server is a stand-alone and embeddable reporting server.
+      It is a central information hub, with reporting and analytics that can be embedded
+      into web and mobile applications.
+    digest: 233f0a8df6b387492b455e07da48d54e9437b7e0167c4917bf7626542c76c8da
+    home: https://github.com/bitnami/charts/tree/master/bitnami/jasperreports
+    icon: https://bitnami.com/assets/stacks/jasperserver/img/jasperserver-stack-220x234.png
+    keywords:
+    - business intelligence
+    - java
+    - jasper
+    - reporting
+    - analytic
+    - visualization
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: jasperreports
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/jasperreports
+    - http://community.jaspersoft.com/project/jasperreports-server
+    urls:
+    - jasperreports-14.3.4.tgz
+    version: 14.3.4
+  jenkins:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.361.2
+    created: "2022-10-24T17:17:59.488446995Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Jenkins is an open source Continuous Integration and Continuous Delivery
+      (CI/CD) server designed to automate the building, testing, and deploying of
+      any software project.
+    digest: e20fe67d1fd588e5228b1913b15383aefcb73032e4ef42f41523cdf95a88586d
+    home: https://github.com/bitnami/charts/tree/master/bitnami/jenkins
+    icon: https://bitnami.com/assets/stacks/jenkins/img/jenkins-stack-220x234.png
+    keywords:
+    - jenkins
+    - ci
+    - cd
+    - http
+    - web
+    - application
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: jenkins
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/jenkins
+    - https://jenkins.io/
+    urls:
+    - jenkins-11.0.6.tgz
+    version: 11.0.6
+  joomla:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 4.2.3
+    created: "2022-10-24T17:17:59.495799561Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Joomla! is an award winning open source CMS platform for building
+      websites and applications. It includes page caching, page compression and Let's
+      Encrypt auto-configuration support.
+    digest: c0389fc3532b05253b61e5768a1e8cfc49a7e2fdcd60878b7851e7aeece6c9b6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/joomla
+    icon: https://bitnami.com/assets/stacks/joomla/img/joomla-stack-220x234.png
+    keywords:
+    - joomla
+    - cms
+    - blog
+    - http
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: joomla
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/joomla
+    - https://www.joomla.org/
+    urls:
+    - joomla-13.3.7.tgz
+    version: 13.3.7
+  jupyterhub:
+  - annotations:
+      category: MachineLearning
+    apiVersion: v2
+    appVersion: 3.0.0
+    created: "2022-10-24T17:17:59.507538428Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: JupyterHub brings the power of notebooks to groups of users. It gives
+      users access to computational environments and resources without burdening the
+      users with installation and maintenance tasks.
+    digest: 8ed3e1ca5fd4999453ba529dfd55d893dc528b54bf67fd3487182d70cbc3a070
+    home: https://jupyter.org/hub
+    icon: https://bitnami.com/assets/stacks/jupyterhub/img/jupyterhub-stack-220x234.png
+    keywords:
+    - python
+    - scientific
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: jupyterhub
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/jupyterhub
+    - https://github.com/jupyterhub/jupyterhub
+    urls:
+    - jupyterhub-2.0.1.tgz
+    version: 2.0.1
+  kafka:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.3.1
+    created: "2022-10-24T17:17:59.516406029Z"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Kafka is a distributed streaming platform designed to build
+      real-time pipelines and can be used as a message broker or as a replacement
+      for a log aggregation solution for big data applications.
+    digest: f6963b7450d89cdc929e57c30a5e78a531561ec60d4e03178c6f08544c73f57a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kafka
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kafka
+    - https://kafka.apache.org/
+    urls:
+    - kafka-19.0.0.tgz
+    version: 19.0.0
+  keycloak:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 19.0.3
+    created: "2022-10-24T17:17:59.523834997Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Keycloak is a high performance Java-based identity and access management
+      solution. It lets developers add an authentication layer to their applications
+      with minimum effort.
+    digest: 052cab7b302f3477377b0b78c2fdc35b8c80a418352a505c275b15e1f25dd1f9
+    home: https://www.keycloak.org
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/keycloak
+    - https://github.com/keycloak/keycloak
+    urls:
+    - keycloak-10.1.5.tgz
+    version: 10.1.5
+  kiam:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 4.2.0
+    created: "2022-10-24T17:17:59.528910112Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: kiam is a proxy that captures AWS Metadata API requests. It allows
+      AWS IAM roles to be set for Kubernetes workloads.
+    digest: 674436ef23d5c70483f60ef45b9393bb5913c391e7bab77192dc0e3a6827816b
+    home: https://github.com/uswitch/kiam
+    icon: https://bitnami.com/assets/stacks/kiam/img/kiam-stack-220x234.png
+    keywords:
+    - aws
+    - iam
+    - security
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kiam
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kiam
+    - https://github.com/uswitch/kiam
+    urls:
+    - kiam-1.1.4.tgz
+    version: 1.1.4
+  kibana:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 8.4.3
+    created: "2022-10-24T17:17:59.531834379Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Kibana is an open source, browser based analytics and search dashboard
+      for Elasticsearch. Kibana strives to be easy to get started with, while also
+      being flexible and powerful.
+    digest: a77a94dc6be4fbaf0a049b10d31ff03fbddd1f650911964b7ab216e2b366176e
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kibana
+    icon: https://bitnami.com/assets/stacks/kibana/img/kibana-stack-220x234.png
+    keywords:
+    - kibana
+    - analytics
+    - monitoring
+    - metrics
+    - logs
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kibana
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kibana
+    - https://www.elastic.co/products/kibana
+    urls:
+    - kibana-10.2.6.tgz
+    version: 10.2.6
+  kong:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.0.0
+    created: "2022-10-24T17:17:59.543327539Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.x.x
+    description: Kong is an open source Microservice API gateway and platform designed
+      for managing microservices requests of high-availability, fault-tolerance, and
+      distributed systems.
+    digest: 05756ef45d85b0e6620df88051913faf43cf1377e7914041a788106499f9be1c
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kong
+    icon: https://bitnami.com/assets/stacks/kong/img/kong-stack-220x234.png
+    keywords:
+    - kong
+    - ingress
+    - openresty
+    - controller
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kong
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kong
+    - https://konghq.com/
+    urls:
+    - kong-7.0.0.tgz
+    version: 7.0.0
+  kube-prometheus:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 0.60.1
+    created: "2022-10-24T17:17:59.562334971Z"
+    dependencies:
+    - condition: exporters.enabled,exporters.node-exporter.enabled
+      name: node-exporter
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.x.x
+    - condition: exporters.enabled,exporters.kube-state-metrics.enabled
+      name: kube-state-metrics
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Prometheus Operator provides easy monitoring definitions for Kubernetes
+      services and deployment and management of Prometheus instances.
+    digest: 6c888e1c79bb6f79e7405d41bbe46b255c8ea9dbc1e0060f1e62925f0f340013
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kube-prometheus
+    icon: https://bitnami.com/assets/stacks/prometheus-operator/img/prometheus-operator-stack-220x234.png
+    keywords:
+    - prometheus
+    - alertmanager
+    - operator
+    - monitoring
+    kubeVersion: '>= 1.16.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kube-prometheus
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/prometheus-operator
+    - https://github.com/bitnami/containers/tree/main/bitnami/prometheus
+    - https://github.com/bitnami/containers/tree/main/bitnami/alertmanager
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - kube-prometheus-8.1.11.tgz
+    version: 8.1.11
+  kube-state-metrics:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 2.6.0
+    created: "2022-10-24T17:17:59.565567344Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: kube-state-metrics is a simple service that listens to the Kubernetes
+      API server and generates metrics about the state of the objects.
+    digest: f643942a76116c7e2c73a7b37f34d89f770e5ce62789fd30310391e8262ebd98
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kube-state-metrics
+    icon: https://bitnami.com/assets/stacks/kube-state-metrics/img/kube-state-metrics-stack-220x234.png
+    keywords:
+    - prometheus
+    - kube-state-metrics
+    - monitoring
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kube-state-metrics
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kube-state-metrics
+    - https://github.com/kubernetes/kube-state-metrics
+    urls:
+    - kube-state-metrics-3.2.4.tgz
+    version: 3.2.4
+  kubeapps:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.0
+    created: "2022-10-24T17:17:59.580632486Z"
+    dependencies:
+    - condition: packaging.flux.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.x.x
+    - condition: packaging.helm.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Kubeapps is a web-based UI for launching and managing applications
+      on Kubernetes. It allows users to deploy trusted applications and operators
+      to control users access to the cluster.
+    digest: a3712e57ae678215e428764630b9f0ce842467b46fd9f801487b25d5165672c7
+    home: https://kubeapps.dev
+    icon: https://bitnami.com/assets/stacks/kubeapps/img/kubeapps-stack-220x234.png
+    keywords:
+    - helm
+    - dashboard
+    - service catalog
+    - deployment
+    kubeVersion: '>=1.21.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kubeapps
+    sources:
+    - https://github.com/vmware-tanzu/kubeapps
+    urls:
+    - kubeapps-11.0.0.tgz
+    version: 11.0.0
+  kubernetes-event-exporter:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-10-24T17:17:59.582728533Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Kubernetes Event Exporter makes it easy to export Kubernetes events
+      to other tools, thereby enabling better event observability, custom alerts and
+      aggregation.
+    digest: 2aef28867b9cf69cd1b9e31c9aec0a19fa36fae3c7881dfd8dfd31c0ddbad97e
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter
+    icon: https://bitnami.com/assets/stacks/kubernetes-event-exporter/img/kubernetes-event-exporter-stack-220x234.png
+    keywords:
+    - alerting
+    - event exporting
+    - events
+    - kubernetes events
+    - monitoring
+    - observability
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kubernetes-event-exporter
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kubernetes-event-exporter
+    - https://github.com/resmoio/kubernetes-event-exporter
+    urls:
+    - kubernetes-event-exporter-2.0.0.tgz
+    version: 2.0.0
+  logstash:
+  - annotations:
+      category: LogManagement
+    apiVersion: v2
+    appVersion: 8.4.3
+    created: "2022-10-24T17:17:59.58700453Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Logstash is an open source data processing engine. It ingests data
+      from multiple sources, processes it, and sends the output to final destination
+      in real-time. It is a core component of the ELK stack.
+    digest: dbad204841732c9350a26b2176c51541346e909f8cf339dba4b28d4eeef155c7
+    home: https://github.com/bitnami/charts/tree/master/bitnami/logstash
+    icon: https://bitnami.com/assets/stacks/logstash/img/logstash-stack-220x234.png
+    keywords:
+    - logstash
+    - logging
+    - elk
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: logstash
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/logstash
+    - https://www.elastic.co/products/logstash
+    urls:
+    - logstash-5.1.5.tgz
+    version: 5.1.5
+  magento:
+  - annotations:
+      category: E-Commerce
+    apiVersion: v2
+    appVersion: 2.4.5
+    created: "2022-10-24T17:17:59.604568329Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - magento-database
+      version: 11.x.x
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://charts.bitnami.com/bitnami
+      version: 19.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Magento is a powerful open source e-commerce platform. With easy
+      customizations and rich features, it allows retailers to grow their online businesses
+      in a cost-effective way.
+    digest: 8bda2ab992953c3f57893854af8c2128ae89ec7021a57de709d298e6f91f2c76
+    home: https://github.com/bitnami/charts/tree/master/bitnami/magento
+    icon: https://bitnami.com/assets/stacks/magento/img/magento-stack-220x234.png
+    keywords:
+    - magento
+    - e-commerce
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: magento
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/magento
+    - https://magento.com/
+    urls:
+    - magento-21.1.6.tgz
+    version: 21.1.6
+  mariadb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 10.6.10
+    created: "2022-10-24T17:17:59.608442017Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: MariaDB is an open source, community-developed SQL database server
+      that is widely in use around the world due to its enterprise features, flexibility,
+      and collaboration with leading tech firms.
+    digest: 14df0a757585a44e1345712c3682922343e836a4c8d2cfc6541ea8df7d2bccd6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mariadb
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mariadb
+    - https://github.com/prometheus/mysqld_exporter
+    - https://mariadb.org
+    urls:
+    - mariadb-11.3.3.tgz
+    version: 11.3.3
+  mariadb-galera:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 10.6.10
+    created: "2022-10-24T17:17:59.6121066Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MariaDB Galera is a multi-primary database cluster solution for synchronous
+      replication and high availability.
+    digest: 4a956476882dd6ff5dd19faf00a58d49a2e247b9c8884033e3876c4bf246003b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mariadb-galera
+    icon: https://bitnami.com/assets/stacks/mariadb-galera/img/mariadb-galera-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    - galera
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mariadb-galera
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mariadb-galera
+    - https://github.com/prometheus/mysqld_exporter
+    - https://mariadb.org
+    urls:
+    - mariadb-galera-7.4.4.tgz
+    version: 7.4.4
+  matomo:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 4.12.0
+    created: "2022-10-24T17:17:59.620021479Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Matomo, formerly known as Piwik, is a real time web analytics program.
+      It provides detailed reports on website visitors.
+    digest: 4e5af502d16d9f95865b36dc22465b8dc02d1037e1fe2dc54a693a0ec8f95df0
+    home: https://github.com/bitnami/charts/tree/master/bitnami/matomo
+    icon: https://bitnami.com/assets/stacks/matomo/img/matomo-stack-220x234.png
+    keywords:
+    - matomo
+    - analytics
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: matomo
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/matomo
+    - https://www.matomo.org/
+    urls:
+    - matomo-0.2.9.tgz
+    version: 0.2.9
+  mediawiki:
+  - annotations:
+      category: Wiki
+    apiVersion: v2
+    appVersion: 1.38.4
+    created: "2022-10-24T17:17:59.628278966Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - mediawiki-database
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MediaWiki is the free and open source wiki software that powers Wikipedia.
+      Used by thousands of organizations, it is extremely powerful, scalable software
+      and a feature-rich wiki implementation.
+    digest: 9310fb16d66c9cd1bab7227151be1041f2b1a3a8f5ba632940a29f914c016cf2
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mediawiki
+    icon: https://bitnami.com/assets/stacks/mediawiki/img/mediawiki-stack-220x234.png
+    keywords:
+    - mediawiki
+    - wiki
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mediawiki
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mediawiki
+    - https://www.mediawiki.org/
+    urls:
+    - mediawiki-14.3.7.tgz
+    version: 14.3.7
+  memcached:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.6.17
+    created: "2022-10-24T17:17:59.630868725Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Memcached is an high-performance, distributed memory object caching
+      system, generic in nature, but intended for use in speeding up dynamic web applications
+      by alleviating database load.
+    digest: 554d32f0806270530cdbc311420a0712fc8b1f4457266618a971fccd50d0f359
+    home: https://github.com/bitnami/charts/tree/master/bitnami/memcached
+    icon: https://bitnami.com/assets/stacks/memcached/img/memcached-stack-220x234.png
+    keywords:
+    - memcached
+    - cache
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: memcached
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/memcached
+    - http://memcached.org/
+    urls:
+    - memcached-6.2.7.tgz
+    version: 6.2.7
+  metallb:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 0.13.6
+    created: "2022-10-24T17:17:59.633849993Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MetalLB is a load-balancer implementation for bare metal Kubernetes
+      clusters, using standard routing protocols.
+    digest: 8a2d1756cc418c5059881aae596e6a90505fb5f97cc004efa07e042a13b42203
+    home: https://github.com/bitnami/charts/tree/master/bitnami/metallb
+    icon: https://bitnami.com/assets/stacks/metallb-speaker/img/metallb-speaker-stack-220x234.png
+    keywords:
+    - load-balancer
+    - balancer
+    - lb
+    - bgp
+    - arp
+    - vrrp
+    - vip
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: metallb
+    sources:
+    - https://github.com/metallb/metallb
+    - https://github.com/bitnami/containers/tree/main/bitnami/metallb
+    - https://metallb.universe.tf
+    urls:
+    - metallb-4.1.7.tgz
+    version: 4.1.7
+  metrics-server:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 0.6.1
+    created: "2022-10-24T17:17:59.636038743Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Metrics Server aggregates resource usage data, such as container
+      CPU and memory usage, in a Kubernetes cluster and makes it available via the
+      Metrics API.
+    digest: ddaa02b9b77926960dfcd090ca899fc422d15c10a7b3f295b814d5fd663b733a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/metrics-server
+    icon: https://bitnami.com/assets/stacks/metrics-server/img/metrics-server-stack-220x234.png
+    keywords:
+    - metrics-server
+    - cluster
+    - metrics
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: metrics-server
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/metrics-server
+    - https://github.com/kubernetes-incubator/metrics-server
+    urls:
+    - metrics-server-6.2.1.tgz
+    version: 6.2.1
+  minio:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2022.10.8
+    created: "2022-10-24T17:17:59.640824151Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MinIO(R) is an object storage server, compatible with Amazon S3 cloud
+      storage service, mainly used for storing unstructured data (such as photos,
+      videos, log files, etc.).
+    digest: 2a211d5085456ff57977be33d2147356114f722a3c02f1c864fe63f3fc998447
+    home: https://github.com/bitnami/charts/tree/master/bitnami/minio
+    icon: https://bitnami.com/assets/stacks/minio/img/minio-stack-220x234.png
+    keywords:
+    - minio
+    - storage
+    - object-storage
+    - s3
+    - cluster
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: minio
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/minio
+    - https://min.io
+    urls:
+    - minio-11.10.7.tgz
+    version: 11.10.7
+  mongodb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.0.2
+    created: "2022-10-24T17:17:59.646796387Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 8a4d63c7d74054d1791e89f82598fe88bbb0934afa4cbcb864af78dde9d436ec
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mongodb
+    - https://mongodb.org
+    urls:
+    - mongodb-13.1.7.tgz
+    version: 13.1.7
+  mongodb-sharded:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.0.2
+    created: "2022-10-24T17:17:59.6518185Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is an open source NoSQL database that uses JSON for data
+      storage. MongoDB(TM) Sharded improves scalability and reliability for large
+      datasets by distributing data across multiple machines.
+    digest: 206ee92c1d4955c4d9e48872ed048c2754b7da163b9d783b51819d66d698b415
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb-sharded
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mongodb-sharded
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mongodb-sharded
+    - https://mongodb.org
+    urls:
+    - mongodb-sharded-6.1.6.tgz
+    version: 6.1.6
+  moodle:
+  - annotations:
+      category: E-Learning
+    apiVersion: v2
+    appVersion: 4.0.4
+    created: "2022-10-24T17:17:59.65885826Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Moodle(TM) LMS is an open source online Learning Management System
+      widely used at universities, schools, and corporations. It is modular and highly
+      adaptable to any type of online learning.
+    digest: 4d40d88f03ee6be02486fd98f47ae9ddd1bcb161847addaac065cda15a70e596
+    home: https://github.com/bitnami/charts/tree/master/bitnami/moodle
+    icon: https://bitnami.com/assets/stacks/moodle/img/moodle-stack-220x234.png
+    keywords:
+    - moodle
+    - learning
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: moodle
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/moodle
+    - https://www.moodle.org/
+    urls:
+    - moodle-14.3.0.tgz
+    version: 14.3.0
+  mxnet:
+  - annotations:
+      category: MachineLearning
+    apiVersion: v2
+    appVersion: 1.9.1
+    created: "2022-10-24T17:17:59.662167435Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache MXNet (Incubating) is a flexible and efficient library for
+      deep learning designed to work as a neural network. Bitnami image ships OpenBLAS
+      as math library.
+    digest: c513a282ca1a3121d127ef4c9abcb02fb35e008eb113382146f93777b26eb10f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mxnet
+    icon: https://bitnami.com/assets/stacks/mxnet/img/mxnet-stack-220x234.png
+    keywords:
+    - mxnet
+    - python
+    - machine
+    - learning
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mxnet
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mxnet
+    - https://mxnet.apache.org/
+    urls:
+    - mxnet-3.1.5.tgz
+    version: 3.1.5
+  mysql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.31
+    created: "2022-10-24T17:17:59.667089347Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: 3c795e5c3d0df9f5b8c3191fc45110c9a510f632e9c952b6614267c162b599ea
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mysql
+    - https://mysql.com
+    urls:
+    - mysql-9.4.1.tgz
+    version: 9.4.1
+  nats:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.9.3
+    created: "2022-10-24T17:17:59.669768408Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: NATS is an open source, lightweight and high-performance messaging
+      system. It is ideal for distributed systems and supports modern cloud architectures
+      and pub-sub, request-reply and queuing models.
+    digest: 900ebeba23698ecf4b9a7a860109d9dacb0a73ddacb145de2a3c677a7c0c00af
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nats
+    icon: https://bitnami.com/assets/stacks/nats/img/nats-stack-220x234.png
+    keywords:
+    - nats
+    - messaging
+    - addressing
+    - discovery
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: nats
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/nats
+    - https://nats.io/
+    urls:
+    - nats-7.4.9.tgz
+    version: 7.4.9
+  nginx:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.23.1
+    created: "2022-10-24T17:17:59.672566671Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: NGINX Open Source is a web server that can be also used as a reverse
+      proxy, load balancer, and HTTP cache. Recommended for high-demanding sites due
+      to its ability to provide faster content.
+    digest: 621c1288e1002a84570ce54e244e077b5dfe37a94bca975368eae68bb1c0c38c
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nginx
+    icon: https://bitnami.com/assets/stacks/nginx/img/nginx-stack-220x234.png
+    keywords:
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: nginx
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/nginx
+    - https://www.nginx.org
+    urls:
+    - nginx-13.2.10.tgz
+    version: 13.2.10
+  nginx-ingress-controller:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.4.0
+    created: "2022-10-24T17:17:59.677392881Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: NGINX Ingress Controller is an Ingress controller that manages external
+      access to HTTP services in a Kubernetes cluster using NGINX.
+    digest: 3a05b7d63d8e639b408fa31d712b4c0da61086ee2fe558f080be2aa55dde9838
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nginx-ingress-controller
+    icon: https://bitnami.com/assets/stacks/nginx-ingress-controller/img/nginx-ingress-controller-stack-220x234.png
+    keywords:
+    - ingress
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    kubeVersion: '>= 1.20.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: nginx-ingress-controller
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/nginx-ingress-controller
+    - https://github.com/kubernetes/ingress-nginx
+    urls:
+    - nginx-ingress-controller-9.3.18.tgz
+    version: 9.3.18
+  nginx-intel:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 0.4.8
+    created: "2022-10-24T17:17:59.680866159Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: NGINX Open Source for Intel is a lightweight server, combined with
+      cryptography acceleration for 3rd gen Xeon Scalable Processors (Ice Lake) to
+      get a breakthrough performance improvement.
+    digest: 43c60b12c12c3d5671a633e55e860e256413e4d7fc2c00f440364ec6a8474da0
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nginx-intel
+    icon: https://bitnami.com/assets/stacks/nginx/img/nginx-stack-220x234.png
+    keywords:
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: nginx-intel
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/nginx-intel
+    - https://github.com/intel/asynch_mode_nginx
+    urls:
+    - nginx-intel-2.1.9.tgz
+    version: 2.1.9
+  node:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 16.18.0
+    created: "2022-10-24T17:17:59.688787039Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Node.js is a runtime environment built on V8 JavaScript engine. Its
+      event-driven, non-blocking I/O model enables the development of fast, scalable,
+      and data-intensive server applications.
+    digest: a084bf673ed1c91dd519edae4b8242b91e92bbf38c64e6e78b5ec12ba43f8959
+    home: https://github.com/bitnami/charts/tree/master/bitnami/node
+    icon: https://bitnami.com/assets/stacks/nodejs/img/nodejs-stack-220x234.png
+    keywords:
+    - node
+    - javascript
+    - nodejs
+    - git
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: node
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/node
+    - http://nodejs.org/
+    urls:
+    - node-19.1.6.tgz
+    version: 19.1.6
+  node-exporter:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 1.4.0
+    created: "2022-10-24T17:17:59.690875286Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Prometheus exporter for hardware and OS metrics exposed by UNIX kernels,
+      with pluggable metric collectors.
+    digest: 0aeb0ba86fc88ebe69c56fa33e86837cc3d7d9c7792c30b6031fdcde748a33ee
+    home: https://github.com/bitnami/charts/tree/master/bitnami/node-exporter
+    icon: https://bitnami.com/assets/stacks/node-exporter/img/node-exporter-stack-220x234.png
+    keywords:
+    - prometheus
+    - node-exporter
+    - monitoring
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: node-exporter
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/node-exporter
+    - https://github.com/prometheus/node_exporter
+    - https://prometheus.io/
+    urls:
+    - node-exporter-3.2.1.tgz
+    version: 3.2.1
+  oauth2-proxy:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 7.3.0
+    created: "2022-10-24T17:17:59.699950492Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: A reverse proxy and static file server that provides authentication
+      using Providers (Google, GitHub, and others) to validate accounts by email,
+      domain or group.
+    digest: 7b125dfa5402263749e2612fc26c448fe60faea0eb8f6ad11c2828da69f4b6fa
+    home: https://github.com/bitnami/charts/tree/master/bitnami/oauth2-proxy
+    icon: https://bitnami.com/assets/stacks/oauth2-proxy/img/oauth2-proxy-stack-220x234.png
+    keywords:
+    - kubernetes
+    - oauth
+    - oauth2
+    - authentication
+    - google
+    - github
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: oauth2-proxy
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/oauth2-proxy
+    - https://github.com/oauth2-proxy/oauth2-proxy
+    urls:
+    - oauth2-proxy-3.3.2.tgz
+    version: 3.3.2
+  odoo:
+  - annotations:
+      category: CRM
+    apiVersion: v2
+    appVersion: 15.0.20221010
+    created: "2022-10-24T17:17:59.706787147Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Odoo is an open source ERP and CRM platform, formerly known as OpenERP,
+      that can connect a wide variety of business operations such as sales, supply
+      chain, finance, and project management.
+    digest: 1e09c602798ece5772100a374e5919b7c7a3f05631874a445d04706a0938b196
+    home: https://github.com/bitnami/charts/tree/master/bitnami/odoo
+    icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
+    keywords:
+    - odoo
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: odoo
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/odoo
+    - https://www.odoo.com/
+    urls:
+    - odoo-21.6.5.tgz
+    version: 21.6.5
+  opencart:
+  - annotations:
+      category: E-Commerce
+    apiVersion: v2
+    appVersion: 4.0.1-1
+    created: "2022-10-24T17:17:59.714452021Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: OpenCart is free open source ecommerce platform for online merchants.
+      OpenCart provides a professional and reliable foundation from which to build
+      a successful online store.
+    digest: e675e2e442d2099daf63431404c10d368ac41078adcd80e373cbe27299d83b0d
+    home: https://github.com/bitnami/charts/tree/master/bitnami/opencart
+    icon: https://bitnami.com/assets/stacks/opencart/img/opencart-stack-220x234.png
+    keywords:
+    - opencart
+    - e-commerce
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: opencart
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/opencart
+    - https://opencart.com/
+    urls:
+    - opencart-13.0.2.tgz
+    version: 13.0.2
+  osclass:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 8.0.2
+    created: "2022-10-24T17:17:59.720967669Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - osclass-database
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Osclass allows you to easily create a classifieds site without any
+      technical knowledge. It provides support for presenting general ads or specialized
+      ads, is customizable, extensible and multilingual.
+    digest: cef22aa04b30caefd4d32ae5607be7e1ef4ba15c27fc8031e3f85c736a4707cf
+    home: https://github.com/bitnami/charts/tree/master/bitnami/osclass
+    icon: https://bitnami.com/assets/stacks/osclass/img/osclass-stack-220x234.png
+    keywords:
+    - osclass
+    - classifieds
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: osclass
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/osclass
+    - https://osclass.org/
+    urls:
+    - osclass-14.2.5.tgz
+    version: 14.2.5
+  owncloud:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 10.11.0
+    created: "2022-10-24T17:17:59.728900949Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - owncloud-database
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: ownCloud is an open source content collaboration platform used to
+      store and share files from any device. It grants data privacy, synchronization
+      between devices, and file access control.
+    digest: 7f1423851c770269c75e028c8ad2932175bc081d1b5b6ca8a0357058a2940a13
+    home: https://github.com/bitnami/charts/tree/master/bitnami/owncloud
+    icon: https://bitnami.com/assets/stacks/owncloud/img/owncloud-stack-220x234.png
+    keywords:
+    - owncloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: owncloud
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/owncloud
+    - https://owncloud.org/
+    urls:
+    - owncloud-12.2.4.tgz
+    version: 12.2.4
+  parse:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 5.2.7
+    created: "2022-10-24T17:17:59.73866577Z"
+    dependencies:
+    - name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Parse is a platform that enables users to add a scalable and powerful
+      backend to launch a full-featured app for iOS, Android, JavaScript, Windows,
+      Unity, and more.
+    digest: 016c626ab98a7f545e54e3f27b578f096bd317cc03ef9fba9d3b67cb48ea965b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/parse
+    icon: https://bitnami.com/assets/stacks/parse/img/parse-stack-220x234.png
+    keywords:
+    - parse
+    - backend
+    - serverless
+    - platform
+    - mbaas
+    - mobile
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: parse
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/parse
+    - https://github.com/bitnami/containers/tree/main/bitnami/parse-dashboard
+    - https://parse.com/
+    urls:
+    - parse-19.1.5.tgz
+    version: 19.1.5
+  phpbb:
+  - annotations:
+      category: Forum
+    apiVersion: v2
+    appVersion: 3.3.8
+    created: "2022-10-24T17:17:59.744937413Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: phpBB is a popular bulletin board that features robust messaging
+      capabilities such as flat message structure, subforums, topic split/merge/lock,
+      user groups, full-text search, and attachments.
+    digest: 4243d8919614a54fad00115386b154baee5219a14d04100742643f79060d649a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/phpbb
+    icon: https://bitnami.com/assets/stacks/phpbb/img/phpbb-stack-220x234.png
+    keywords:
+    - phpbb
+    - forum
+    - http
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: phpbb
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/phpbb
+    - https://www.phpbb.com/
+    urls:
+    - phpbb-12.3.6.tgz
+    version: 12.3.6
+  phpmyadmin:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 5.2.0
+    created: "2022-10-24T17:17:59.752891493Z"
+    dependencies:
+    - condition: db.bundleTestDB
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - phpmyadmin-database
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: phpMyAdmin is a free software tool written in PHP, intended to handle
+      the administration of MySQL over the Web. phpMyAdmin supports a wide range of
+      operations on MySQL and MariaDB.
+    digest: 44c466c96ea4b4f304fd5247239d1b8a0a76361897850c247bfdc15c934a2e38
+    home: https://github.com/bitnami/charts/tree/master/bitnami/phpmyadmin
+    icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - phpmyadmin
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: phpmyadmin
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/phpmyadmin
+    - https://www.phpmyadmin.net/
+    urls:
+    - phpmyadmin-10.3.5.tgz
+    version: 10.3.5
+  pinniped:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 0.20.0
+    created: "2022-10-24T17:17:59.75628487Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Pinniped is an identity service provider for Kubernetes. Provides
+      a consistent, unified login experience across all your clusters, allowing enteprise
+      IDP protocols.
+    digest: 94602bcc2c327147e1799075b5c396cbb0929cc31bc37ec97ced6c87dbeca0c8
+    home: https://pinniped.dev/
+    icon: https://bitnami.com/assets/stacks/pinniped/img/pinniped-stack-220x234.png
+    keywords:
+    - identity
+    - infrastructure
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: pinniped
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/pinniped
+    - https://github.com/vmware-tanzu/pinniped/
+    urls:
+    - pinniped-0.4.1.tgz
+    version: 0.4.1
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 14.5.0
+    created: "2022-10-24T17:17:59.760730971Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 9185d9d02bc192b3fbb55470f137efef0003514852e890852bdfebacd5ca7933
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/postgresql
+    - https://www.postgresql.org/
+    urls:
+    - postgresql-11.9.8.tgz
+    version: 11.9.8
+  postgresql-ha:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 14.5.0
+    created: "2022-10-24T17:17:59.766252796Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: This PostgreSQL cluster solution includes the PostgreSQL replication
+      manager, an open-source tool for managing replication and failover on PostgreSQL
+      clusters.
+    digest: dd7002852a02884f3e99a1fe9d35a754bd3bf127ad483e49b70ae1d60e3337ff
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - repmgr
+    - pgpool
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    - high availability
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: postgresql-ha
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/postgresql
+    - https://www.postgresql.org/
+    urls:
+    - postgresql-ha-9.4.7.tgz
+    version: 9.4.7
+  prestashop:
+  - annotations:
+      category: E-Commerce
+    apiVersion: v2
+    appVersion: 1.7.8-7
+    created: "2022-10-24T17:17:59.772804245Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PrestaShop is a powerful open source eCommerce platform used by over
+      250,000 online storefronts worldwide. It is easily customizable, responsive,
+      and includes powerful tools to drive online sales.
+    digest: dbbd08333e566d9094831dce8e8f20a828f303f84b7d6e118c45e2e9eb5d6442
+    home: https://github.com/bitnami/charts/tree/master/bitnami/prestashop
+    icon: https://bitnami.com/assets/stacks/prestashop/img/prestashop-stack-220x234.png
+    keywords:
+    - prestashop
+    - e-commerce
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: prestashop
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/prestashop
+    - https://prestashop.com/
+    urls:
+    - prestashop-15.3.5.tgz
+    version: 15.3.5
+  pytorch:
+  - annotations:
+      category: MachineLearning
+    apiVersion: v2
+    appVersion: 1.12.1
+    created: "2022-10-24T17:17:59.776751134Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PyTorch is a deep learning platform that accelerates the transition
+      from research prototyping to production deployment. Bitnami image includes Torchvision
+      for specific computer vision support.
+    digest: b2bd8419591e8ba69ce4c16734c124c5b6ed0fcda414ac557d601bdc6e9ad438
+    home: https://github.com/bitnami/charts/tree/master/bitnami/pytorch
+    icon: https://bitnami.com/assets/stacks/pytorch/img/pytorch-stack-220x234.png
+    keywords:
+    - pytorch
+    - python
+    - machine
+    - learning
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: pytorch
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/pytorch
+    - https://pytorch.org/
+    urls:
+    - pytorch-2.5.6.tgz
+    version: 2.5.6
+  rabbitmq:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.11.0
+    created: "2022-10-24T17:17:59.780753025Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: RabbitMQ is an open source general-purpose message broker that is
+      designed for consistent, highly-available messaging scenarios (both synchronous
+      and asynchronous).
+    digest: 4405f3ff9701adf392b60b030cf5200f2466057df8cf9674ebf2731857ef95a3
+    home: https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq
+    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq
+    - https://www.rabbitmq.com
+    urls:
+    - rabbitmq-11.0.1.tgz
+    version: 11.0.1
+  rabbitmq-cluster-operator:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.0.0
+    created: "2022-10-24T17:17:59.786388953Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: The RabbitMQ Cluster Kubernetes Operator automates provisioning,
+      management, and operations of RabbitMQ clusters running on Kubernetes.
+    digest: 131838dfd57a5bc92b381e36c4d1bb4ae8ec5ce3e13c8fdd8abfb1ebba437f03
+    home: https://github.com/rabbitmq/cluster-operator
+    icon: https://bitnami.com/assets/stacks/rabbitmq-cluster-operator/img/rabbitmq-cluster-operator-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - operator
+    - infrastructure
+    - message queue
+    - AMQP
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: rabbitmq-cluster-operator
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq-cluster-operator
+    - https://github.com/rabbitmq/cluster-operator
+    urls:
+    - rabbitmq-cluster-operator-3.1.0.tgz
+    version: 3.1.0
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2022-10-24T17:17:59.791707474Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - name: helm-utils
+      repository: https://charts.nobidev.com
+      version: 1.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: 5661d83c7341763aa9e9403d214d6aa70568e7984fa95c8f9a29f942b6f78559
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/redis
+    urls:
+    - redis-17.3.5.tgz
+    version: 17.3.5
+  redis-cluster:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2022-10-24T17:17:59.796563884Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, scalable, distributed in-memory cache
+      for applications. It can be used to store and serve data in the form of strings,
+      hashes, lists, sets and sorted sets.
+    digest: 23f79838dac66156968ef49f9521cae4e283c976d5dcd926b3f383e50dbac695
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: redis-cluster
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/redis
+    - http://redis.io/
+    urls:
+    - redis-cluster-8.2.4.tgz
+    version: 8.2.4
+  redmine:
+  - annotations:
+      category: ProjectManagement
+    apiVersion: v2
+    appVersion: 5.0.3
+    created: "2022-10-24T17:17:59.809388375Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redmine is an open source management application. It includes a tracking
+      issue system, Gantt charts for a visual view of projects and deadlines, and
+      supports SCM integration for version control.
+    digest: 7edf59a36874abdcb0422944b7ff6910e795eae00972bcbac15ffa2e060953f7
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redmine
+    icon: https://bitnami.com/assets/stacks/redmine/img/redmine-stack-220x234.png
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: redmine
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/redmine
+    - https://www.redmine.org/
+    urls:
+    - redmine-20.3.7.tgz
+    version: 20.3.7
+  schema-registry:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 7.2.2
+    created: "2022-10-24T17:17:59.820321223Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 19.x.x
+    description: Confluent Schema Registry provides a RESTful interface by adding
+      a serving layer for your metadata on top of Kafka. It expands Kafka enabling
+      support for Apache Avro, JSON, and Protobuf schemas.
+    digest: a8d549434121ebdd650a7c01778143ce325a4333837fae94897b1805f46b06a5
+    home: https://confluent.io/
+    icon: https://bitnami.com/assets/stacks/schema-registry/img/schema-registry-stack-220x234.png
+    keywords:
+    - schema-registry
+    - confluent
+    - kafka
+    - zookeeper
+    - streaming
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: schema-registry
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/schema-registry
+    urls:
+    - schema-registry-6.0.0.tgz
+    version: 6.0.0
+  sealed-secrets:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 0.19.0
+    created: "2022-10-24T17:17:59.822718077Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Sealed Secrets are "one-way" encrypted K8s Secrets that can be created
+      by anyone, but can only be decrypted by the controller running in the target
+      cluster recovering the original object.
+    digest: 185c3fcd02366c928b8f9831188bf437f1a97b01ff29f20c1ac660960e30b97f
+    home: https://github.com/bitnami-labs/sealed-secrets
+    icon: https://bitnami.com/assets/stacks/sealed-secrets/img/sealed-secrets-stack-220x234.png
+    keywords:
+    - secrets
+    - sealed-secrets
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: sealed-secrets
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/sealed-secrets
+    - https://github.com/bitnami-labs/sealed-secrets
+    urls:
+    - sealed-secrets-1.1.6.tgz
+    version: 1.1.6
+  solr:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 9.0.0
+    created: "2022-10-24T17:17:59.830620256Z"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Solr is an extremely powerful, open source enterprise search
+      platform built on Apache Lucene. It is highly reliable and flexible, scalable,
+      and designed to add value very quickly after launch.
+    digest: 7a430b5a894bdda4e39d39c73ef4fb635f07afcc1b9bc259ab871c86a4363ccb
+    home: https://github.com/bitnami/charts/tree/master/bitnami/solr
+    icon: https://bitnami.com/assets/stacks/solr/img/solr-stack-220x234.png
+    keywords:
+    - solr
+    - zookeeper
+    - apache
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: solr
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/solr
+    - https://lucene.apache.org/solr/
+    urls:
+    - solr-6.2.2.tgz
+    version: 6.2.2
+  sonarqube:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 9.6.1
+    created: "2022-10-24T17:17:59.838583337Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: SonarQube is an open source quality management platform that analyzes
+      and measures code's technical quality. It enables developers to detect code
+      issues, vulnerabilities, and bugs in early stages.
+    digest: 18d22ea2633034edb4f39e569c5bbb4c44a5f91838989c05b6b7cae838b26c3d
+    home: https://github.com/bitnami/charts/tree/master/bitnami/sonarqube
+    icon: https://bitnami.com/assets/stacks/sonarqube/img/sonarqube-stack-220x234.png
+    keywords:
+    - sonarqube
+    - code-quality
+    - code-review
+    - static-analysis
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: sonarqube
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/sonarqube
+    - https://github.com/SonarSource/sonarqube
+    urls:
+    - sonarqube-1.6.2.tgz
+    version: 1.6.2
+  spark:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.3.0
+    created: "2022-10-24T17:17:59.841918013Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Spark is a high-performance engine for large-scale computing
+      tasks, such as data processing, machine learning and real-time data streaming.
+      It includes APIs for Java, Python, Scala and R.
+    digest: 067ace699f9ffbc76a810b9143f61b287400ba2e89fb98502537524030b230d8
+    home: https://github.com/bitnami/charts/tree/master/bitnami/spark
+    icon: https://bitnami.com/assets/stacks/spark/img/spark-stack-220x234.png
+    keywords:
+    - apache
+    - spark
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: spark
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/spark
+    - https://spark.apache.org/
+    urls:
+    - spark-6.3.6.tgz
+    version: 6.3.6
+  spring-cloud-dataflow:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 2.9.6
+    created: "2022-10-24T17:17:59.86386331Z"
+    dependencies:
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - dataflow-database
+      version: 11.x.x
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 19.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Spring Cloud Data Flow is a microservices-based toolkit for building
+      streaming and batch data processing pipelines in Cloud Foundry and Kubernetes.
+    digest: fd8063b2532d7a3db36646bc6097345f11c0c350495847d0f1c4c6ee0b59ba6b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/spring-cloud-dataflow
+    icon: https://bitnami.com/assets/stacks/spring-cloud-dataflow/img/spring-cloud-dataflow-stack-220x234.png
+    keywords:
+    - spring-cloud
+    - dataflow
+    - skipper
+    - spring
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: spring-cloud-dataflow
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/spring-cloud-dataflow
+    - https://github.com/bitnami/containers/tree/main/bitnami/spring-cloud-skipper
+    - https://dataflow.spring.io/
+    urls:
+    - spring-cloud-dataflow-13.0.0.tgz
+    version: 13.0.0
+  suitecrm:
+  - annotations:
+      category: CRM
+    apiVersion: v2
+    appVersion: 7.12.7
+    created: "2022-10-24T17:17:59.870615164Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: SuiteCRM is a completely open source, enterprise-grade Customer Relationship
+      Management (CRM) application. SuiteCRM is a fork of the popular SugarCRM application.
+    digest: 2dc35aba1dd4d75fd469f9b3428836af2f11b9c3e7c365524027f13c6261773e
+    home: https://github.com/bitnami/charts/tree/master/bitnami/suitecrm
+    icon: https://bitnami.com/assets/stacks/suitecrm/img/suitecrm-stack-220x234.png
+    keywords:
+    - suitecrm
+    - crm
+    - http
+    - web
+    - php
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: suitecrm
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/suitecrm
+    - https://www.suitecrm.com/
+    urls:
+    - suitecrm-11.2.4.tgz
+    version: 11.2.4
+  tensorflow-resnet:
+  - annotations:
+      category: MachineLearning
+    apiVersion: v2
+    appVersion: 2.10.0
+    created: "2022-10-24T17:17:59.872833414Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: TensorFlow ResNet is a client utility for use with TensorFlow Serving
+      and ResNet models.
+    digest: d6a0ba516af37c17f063e5e2fdf6a4e4669671cbd89157dcff1bd0c96fab42b7
+    home: https://github.com/bitnami/charts/tree/master/bitnami/tensorflow-resnet
+    icon: https://bitnami.com/assets/stacks/tensorflow-inception/img/tensorflow-inception-stack-220x234.png
+    keywords:
+    - tensorflow
+    - serving
+    - resnet
+    - machine
+    - learning
+    - library
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: tensorflow-resnet
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/tensorflow-serving
+    - https://github.com/bitnami/containers/tree/main/bitnami/tensorflow-resnet
+    - https://www.tensorflow.org/serving/
+    urls:
+    - tensorflow-resnet-3.6.6.tgz
+    version: 3.6.6
+  thanos:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 0.28.1
+    created: "2022-10-24T17:17:59.888123161Z"
+    dependencies:
+    - condition: minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Thanos is a highly available metrics system that can be added on
+      top of existing Prometheus deployments, providing a global query view across
+      all Prometheus installations.
+    digest: 46c629b5c349d042b9786e72e7a7b32755a61e3fa9fb0e7cefb7cb4624a7e588
+    home: https://github.com/bitnami/charts/tree/master/bitnami/thanos
+    icon: https://bitnami.com/assets/stacks/thanos/img/thanos-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - prometheus
+    - thanos
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: thanos
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/thanos
+    - https://thanos.io
+    urls:
+    - thanos-11.5.5.tgz
+    version: 11.5.5
+  tomcat:
+  - annotations:
+      category: ApplicationServer
+    apiVersion: v2
+    appVersion: 10.1.1
+    created: "2022-10-24T17:17:59.890908124Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Tomcat is an open-source web server designed to host and run
+      Java-based web applications. It is a lightweight server with a good performance
+      for applications running in production environments.
+    digest: 19552797856d0c5ec05f85c43f80ca59829c22f9d55932ccf940ec60021a2743
+    home: https://github.com/bitnami/charts/tree/master/bitnami/tomcat
+    icon: https://bitnami.com/assets/stacks/tomcat/img/tomcat-stack-220x234.png
+    keywords:
+    - tomcat
+    - java
+    - http
+    - web
+    - application server
+    - jsp
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: tomcat
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/tomcat
+    - http://tomcat.apache.org
+    urls:
+    - tomcat-10.4.7.tgz
+    version: 10.4.7
+  wavefront:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 1.12.0
+    created: "2022-10-24T17:17:59.895937038Z"
+    dependencies:
+    - condition: kube-state-metrics.enabled
+      name: kube-state-metrics
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Wavefront is a high-performance streaming analytics platform for
+      monitoring and optimizing your environment and applications.
+    digest: e718ff83b93a1cf018a22c65bdab89d9475621be7c0dfe76aa38bf814f82de8e
+    home: https://www.wavefront.com
+    icon: https://bitnami.com/assets/stacks/wavefront/img/wavefront-stack-220x234.png
+    keywords:
+    - metric
+    - monitoring
+    - observability
+    - alerting
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wavefront
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wavefront-kubernetes-collector
+    - https://github.com/bitnami/containers/tree/main/bitnami/wavefront-proxy
+    - https://github.com/wavefrontHQ/wavefront-collector-for-kubernetes
+    - https://github.com/wavefrontHQ/wavefront-proxy
+    urls:
+    - wavefront-4.2.5.tgz
+    version: 4.2.5
+  wavefront-hpa-adapter:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 0.9.9
+    created: "2022-10-24T17:17:59.898132688Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Wavefront HPA Adapter for Kubernetes is a Kubernetes Horizontal Pod
+      Autoscaler adapter. It allows to scale your Kubernetes workloads based on Wavefront
+      metrics.
+    digest: 3cb9e99ba86ad8b188c5f3d097bb68af0e7ad030ff08859fc3a8456a8666319a
+    home: https://github.com/wavefrontHQ/wavefront-kubernetes-adapter
+    icon: https://bitnami.com/assets/stacks/wavefront-hpa-adapter/img/wavefront-hpa-adapter-stack-220x234.png
+    keywords:
+    - alerting
+    - adapter
+    - metrics
+    - monitoring
+    - observability
+    - wavefront
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wavefront-hpa-adapter
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wavefront-hpa-adapter
+    urls:
+    - wavefront-hpa-adapter-1.3.4.tgz
+    version: 1.3.4
+  wavefront-prometheus-storage-adapter:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.0.5
+    created: "2022-10-24T17:17:59.907529301Z"
+    dependencies:
+    - condition: wavefront.enabled
+      name: wavefront
+      repository: https://charts.bitnami.com/bitnami
+      version: 4.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Wavefront Storage Adapter is a Prometheus integration to transfer
+      metrics from Prometheus to Wavefront. It lets you save Prometheus data in Wavefront
+      without changing your existing Prometheus setup.
+    digest: fae385c10ae49c5a7d67c6149b0fbcff429e35ab44b0bf713d0fd38608835ca9
+    home: https://github.com/wavefrontHQ/prometheus-storage-adapter
+    icon: https://bitnami.com/assets/stacks/wavefront-prometheus-storage-adapter/img/wavefront-prometheus-storage-adapter-stack-220x234.png
+    keywords:
+    - alerting
+    - adapter
+    - metrics
+    - monitoring
+    - observability
+    - wavefront
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wavefront-prometheus-storage-adapter
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wavefront-prometheus-storage-adapter
+    urls:
+    - wavefront-prometheus-storage-adapter-2.1.4.tgz
+    version: 2.1.4
+  wildfly:
+  - annotations:
+      category: ApplicationServer
+    apiVersion: v2
+    appVersion: 26.1.2
+    created: "2022-10-24T17:17:59.910178461Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Wildfly is a lightweight, open source application server, formerly
+      known as JBoss, that implements the latest enterprise Java standards.
+    digest: 04da51c0ea10825a2e13943a79a63cb195b835cfe039c2541988d1bb8e6b6958
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wildfly
+    icon: https://bitnami.com/assets/stacks/wildfly/img/wildfly-stack-220x234.png
+    keywords:
+    - wildfly
+    - java
+    - http
+    - web
+    - application server
+    - jsp
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wildfly
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wildfly
+    - http://wildfly.org
+    urls:
+    - wildfly-13.5.5.tgz
+    version: 13.5.5
+  wordpress:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 6.0.2
+    created: "2022-10-24T17:17:59.921392615Z"
+    dependencies:
+    - condition: memcached.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: WordPress is the world's most popular blogging and content management
+      platform. Powerful yet simple, everyone from students to global corporations
+      use it to build beautiful, functional websites.
+    digest: 2bca9b36c89fd7738ec4d42749cbd8cc081539328da936473f90fd0607edadce
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wordpress
+    - https://wordpress.org/
+    urls:
+    - wordpress-15.2.5.tgz
+    version: 15.2.5
+  wordpress-intel:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 6.0.2
+    created: "2022-10-24T17:17:59.930618625Z"
+    dependencies:
+    - condition: memcached.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: WordPress for Intel is the most popular blogging application combined
+      with cryptography acceleration for 3rd gen Xeon Scalable Processors (Ice Lake)
+      to get a breakthrough performance improvement.
+    digest: d07e170a31382c44478a3fe9d666779fcd804b101b132a1d935976f622b521d6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress-intel
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wordpress-intel
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wordpress-intel
+    - https://wordpress.org/
+    urls:
+    - wordpress-intel-2.1.11.tgz
+    version: 2.1.11
+  zookeeper:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.8.0
+    created: "2022-10-24T17:17:59.935338332Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache ZooKeeper provides a reliable, centralized register of configuration
+      data and services for distributed applications.
+    digest: d283888f168b2b33a1ed61722f003cc8f12de9f03e8ac644a376966cc5a1ce52
+    home: https://github.com/bitnami/charts/tree/master/bitnami/zookeeper
+    icon: https://bitnami.com/assets/stacks/zookeeper/img/zookeeper-stack-220x234.png
+    keywords:
+    - zookeeper
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: zookeeper
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/zookeeper
+    - https://zookeeper.apache.org/
+    urls:
+    - zookeeper-10.2.3.tgz
+    version: 10.2.3
+generated: "2022-10-24T17:17:59.270504751Z"
