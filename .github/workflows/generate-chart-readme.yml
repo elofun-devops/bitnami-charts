@@ -3,11 +3,14 @@ name: '[Support] Update README metadata'
 on:
   pull_request_target:
     branches:
-      - main
+      - master
     paths:
       - 'bitnami/*/values.yaml'
+  workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   update-readme-metadata:
     runs-on: ubuntu-latest
